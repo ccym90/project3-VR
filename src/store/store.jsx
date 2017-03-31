@@ -1,5 +1,4 @@
 import { createStore, compose, combineReducers } from 'redux';
-// import { todoReducer, nameReducer, searchTextReducer, showCompletedReducer } from '../reducers/reducers'
 
 export let initStore = () => {
 
