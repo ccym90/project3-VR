@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import Main from './components/Main/Main';
 
 // Init Store
-import { initStore } from './store/store'
+import { initStore } from './redux/store'
 const store = initStore();
 
 //
