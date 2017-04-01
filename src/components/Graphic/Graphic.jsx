@@ -5,6 +5,8 @@ import {Entity} from 'aframe-react'
 import classNames from 'classnames'
 import { TYPE_TO_COLOR_MAP } from '../core'
 
+
+
 export default class Member extends Component {
   render () {
     const { id, name, photoUrl } = this.props
