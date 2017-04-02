@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import {Entity, Scene} from 'aframe-react';
+import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
-import { setSearchText } from '../../actions/actions'
 
-class Search  extends Component {
+class Button extends Component {
 
 	handleClick = (e) => {
 		console.log('clicky');
@@ -18,12 +17,13 @@ class Search  extends Component {
 				position={{x: 0, y: 0, z: -5}}
 				material= {{color: '#01a124'}}
 				events={{click: this.handleClick}}
+				sound={{ on: 'click', src: '#click-sound'}}
 				/>
 		)
 	}
 }
 
-export default connect()(Search);
+export default connect()(Button);
 
 
 /*
