@@ -1,9 +1,10 @@
 import { createStore, compose, combineReducers } from 'redux';
+import { showGraphicReducer } from '../reducers/reducers'
 
 export let initStore = () => {
 
   const reducer = combineReducers({
-    // searchText: searchTextReducer,
+    showGraphic: showGraphicReducer,
     // showCompleted: showCompletedReducer,
     // todos: todoReducer,
     // name: nameReducer
