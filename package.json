@@ -8,6 +8,7 @@
     "aframe-particle-system-component": "^1.0.9",
     "aframe-react": "^4.0.7",
     "babel-polyfill": "^6.23.0",
+    "k-frame": "^0.3.2-beta2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",

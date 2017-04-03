@@ -1,49 +1,30 @@
 import React, {Component} from 'react';
 import {Entity} from 'aframe-react';
 import { connect } from 'react-redux';
-import Instruction from '../Instruction/Instruction.jsx'
+import { showText } from '../../redux/actions/actions'
 
 
 class Graphic extends Component {
 
   handleClick = (e) => {
-    console.log("huston we have a click")
-    let { dispatch } = this.props;
-    dispatch(showText(instruction))
+    console.log("huston we have a click");
+    let {dispatch} = this.props;
+    dispatch(showText('instruction'));
   }
 
   render() {
     return (
-      <div>
       <Entity
         geometry={{primitive: 'box'}}
-        material={{color: this.state.color}}
+        material={{color: 'purple'}}
         position={{x: 0, y: 1, z: -3}}
-        events={{click: this.handleClick.bind(this)}}/>
-      </div>
+        events={{click: this.handleClick}}/>
     )
   }
 }
 
 export default connect()(Graphic);
 
-// constructor(props) {
-//   super(props);
-//
-// }
-//
-//   this.state = {
-//     graphic: {}
-//   }
-//
-// handleChange = (e) => {
-//
-//
-// }
-//
-// handleClick = (e) => {
-//
-// }
 
 // ****** render click example changing colour
 // render() {

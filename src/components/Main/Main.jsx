@@ -6,9 +6,8 @@ import {Entity, Scene} from 'aframe-react';
 import React, { Component } from 'react';
 import Button from '../Button/Button';
 import Assets from '../Assets/Assets';
-
-import Graphic from '../Graphic/Graphic.jsx';
-import Instruction from '../Instruction/Instruction.jsx'
+import Graphic from '../Graphic/Graphic';
+import Instruction from '../Instruction/Instruction'
 
 class Main extends Component {
 
@@ -25,18 +24,14 @@ class Main extends Component {
         <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
 
         <Button/>
-
         <Graphic/>
-
         <Instruction/>
-        
         <Entity primitive="a-camera">
           <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
         </Entity>
       </Scene>
     );
   }
-
 
 }
 
