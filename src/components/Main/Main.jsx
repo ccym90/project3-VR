@@ -4,6 +4,9 @@ import 'aframe-particle-system-component';
 import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React, { Component } from 'react';
+import Button from '../Button/Button';
+import Assets from '../Assets/Assets';
+
 import { Graphic } from '../Graphic/Graphic.jsx';
 
 class Main extends Component {
@@ -19,6 +22,9 @@ class Main extends Component {
         <Entity primitive="a-light" type="ambient" color="#445451"/>
         <Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
         <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
+
+        <Button/>
+
         <Entity text={{value: 'He\'s been kidnapped, its up to you to save him!', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
         <Entity/>
         <Entity primitive="a-camera">
@@ -27,6 +33,8 @@ class Main extends Component {
       </Scene>
     );
   }
+
+
 }
 
 export default Main;
