@@ -9,7 +9,7 @@ export var showGraphicReducer = (state = true, action) => {
   }
 };
 
-export var locationReducer = (state = 'hong kong', action) => {
+export var locationReducer = (state = 'hongkong', action) => {
   switch (action.type) {
     case 'SET_LOCATION':
       return action.location;

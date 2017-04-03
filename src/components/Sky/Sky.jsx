@@ -1,0 +1,47 @@
+import React, { Component } from 'react';
+import { Entity } from 'aframe-react';
+import { connect } from 'react-redux';
+
+class Sky extends Component {
+
+	render() {
+		let renderSky = () => {
+			switch (this.props.location) {
+				case 'hongkong':
+					return (
+						<Entity>
+							<img id="skyTexture" alt="" src="https://cdn.aframe.io/a-painter/images/sky.jpg"/>
+							<Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
+						</Entity>
+					)
+				case 'newyork':
+					return(
+						<Entity>
+							<img id="city" alt="" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"/>
+							<Entity primitive="a-sky" height="2048" radius="30" src="#city" theta-length="90" width="2048"/>
+						</Entity>
+					)
+				default:
+					return (
+						<Entity>{
+								console.log('SKY: state.location error:', this.props.location)
+							}</Entity>
+					)
+			}
+		}
+
+		return(
+			<Entity>
+				<img id="skyTexture" alt="" src="https://cdn.aframe.io/a-painter/images/sky.jpg"/>
+				<img id="city" alt="" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"/>
+				{ renderSky() }
+			</Entity>
+		)
+	}
+}
+
+export default connect(
+	(state) => {
+		return state;
+	}
+)(Sky);

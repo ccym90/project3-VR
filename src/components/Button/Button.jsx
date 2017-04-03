@@ -5,19 +5,24 @@ import { setLocation } from '../../redux/actions/actions'
 
 
 class Button extends Component {
-
-
-	handleClick = (e) => {
-		let {dispatch} = this.props;
-		console.log('clicky');
-		dispatch(setLocation('New York'));
-	}
-
 	render() {
+		let toggle = true;
+
+		this.handleClick = (e) => {
+			let {dispatch} = this.props;
+			console.log('clicky');
+			if (toggle){
+				dispatch(setLocation('newyork'));
+				toggle = false;
+			} else {
+				dispatch(setLocation('hongkong'));
+				toggle = true;
+			}
+		}
 
 		return(
 			<Entity>
-				<audio id="click-sound" alt="" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+				<audio id="click-sound" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 				<Entity
 				geometry={{primitive: 'box', width: 1, height: 4, depth: 0.2 }}
 				position={{x: 0, y: 0, z: -5}}
@@ -29,7 +34,6 @@ class Button extends Component {
 		)
 	}
 }
-
 export default connect()(Button);
 
 /*
