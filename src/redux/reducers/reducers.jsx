@@ -8,3 +8,12 @@ export var showGraphicReducer = (state = true, action) => {
       return state;
   }
 };
+
+export var locationReducer = (state = 'hong kong', action) => {
+  switch (action.type) {
+    case 'SET_LOCATION':
+      return action.location;
+    default:
+      return state;
+  }
+};

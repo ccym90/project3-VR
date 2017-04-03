@@ -1,10 +1,11 @@
 import { createStore, compose, combineReducers } from 'redux';
-import { showGraphicReducer } from '../reducers/reducers'
+import { locationReducer, showGraphicReducer } from '../reducers/reducers'
 
 export let initStore = () => {
 
   const reducer = combineReducers({
     showGraphic: showGraphicReducer,
+    location: locationReducer
     // showCompleted: showCompletedReducer,
     // todos: todoReducer,
     // name: nameReducer

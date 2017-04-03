@@ -6,9 +6,11 @@ import Main from './components/Main/Main';
 import { initStore } from './redux/store/store'
 const store = initStore();
 
-//
-//
-//
+store.subscribe( () => {
+  var state = store.getState();
+  // setTodos(state.todos);
+  console.log('New State', state);
+});
 
 class App extends Component {
   render() {
