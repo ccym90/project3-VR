@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Entity } from 'aframe-react';
+import { Entity, Cylinder } from 'aframe-react';
 import { connect } from 'react-redux';
 import { setLocation } from '../../redux/actions/actions'
-
+import thumbCity from '../Assets/thumb-city.png';
+import ocarina from '../Assets/ocarina.mp3'
 
 class Button extends Component {
 	render() {
@@ -10,7 +11,6 @@ class Button extends Component {
 
 		this.handleClick = (e) => {
 			let {dispatch} = this.props;
-			console.log('clicky');
 			if (toggle){
 				dispatch(setLocation('newyork'));
 				toggle = false;
@@ -21,15 +21,23 @@ class Button extends Component {
 		}
 
 		return(
-			<Entity>
+			<Entity position={{x: 3, y: 1.5, z: -3}} >
 				<audio id="click-sound" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-				<Entity
-				geometry={{primitive: 'box', width: 1, height: 4, depth: 0.2 }}
-				position={{x: 0, y: 0, z: -5}}
-				material={{color: '#01a124'}}
-				events={{click: this.handleClick}}
-				sound={{ on: 'click', src: '#click-sound'}}
-				/>
+				<img id="city-thumb" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg"/>
+				<img id="logo" alt="" crossOrigin="anonymous" src={thumbCity}/>
+				<audio id="music" alt="" crossOrigin="anonymous" src={ocarina}></audio>
+				<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
+					rotation={{x:0, y:-45, z:0}}
+					material={{color: '#200f08', src: `#logo`, side:`double` }}
+					text={{value: `Go to New York.`, align: `center` }}
+					events={{click: this.handleClick}}
+					sound={{ on: 'click', src: '#click-sound'}}
+					sound={{ src: '#music', autoplay: true, loop: true, volume: 0.5 }}
+					/>
+				<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
+					material={{color: '#200f08' }}
+					position={{x: 0, y: -1, z: 0}}
+					/>
 			</Entity>
 		)
 	}
@@ -63,8 +71,6 @@ event-set__4={{_event: 'mouseleave', property: 'scale', to:'1 1 1' }}
 		events={{click: this.handleClick}}
 		sound={{ on: 'click', src: '#click-sound'}}
 		/>
-
-
 
 
 <script src="raw.githubusercontent.com/gasolin/aframe-href-component‌​/…; <script type="text/javascript" src="webvr.js"></script> <script src="rawgit.com/ngokevin/aframe-text-component/master/dist/…‌​; </head> <body> <a-scene> <a-box width="1" height="0.4" position="0 0 0" depth="0.0" color="red"> <a-entity text="text: What's up" scale="0.2 0.2 0.2" color="blue" position="-0.3 0.01 0"> </a-entity> </a-box> </a-scene>

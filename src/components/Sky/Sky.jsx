@@ -4,8 +4,14 @@ import { connect } from 'react-redux';
 
 class Sky extends Component {
 
+
 	render() {
+		let fadeAnimation = () => {
+			console.log('fade');
+		}
+
 		let renderSky = () => {
+			{ fadeAnimation() }
 			switch (this.props.location) {
 				case 'hongkong':
 					return (
