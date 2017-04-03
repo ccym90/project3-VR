@@ -8,6 +8,7 @@ import Button from '../Button/Button';
 import Assets from '../Assets/Assets';
 
 import Graphic from '../Graphic/Graphic.jsx';
+import Instruction from '../Instruction/Instruction.jsx'
 
 class Main extends Component {
 
@@ -24,9 +25,11 @@ class Main extends Component {
         <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
 
         <Button/>
+
         <Graphic/>
-        <Entity text={{value: 'He\'s been kidnapped, its up to you to save him!', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
-        <Entity/>
+
+        <Instruction/>
+        
         <Entity primitive="a-camera">
           <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
         </Entity>

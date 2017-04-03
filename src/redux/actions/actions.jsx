@@ -1,7 +1,7 @@
 // ****************instead of nextMemberType have showNextGraphic//changeLocation???????
 
-export function showNextGraphic(graphicID) {
-  return { type: 'SHOW_NEXT_GRAPHIC', graphicID}
+export function showText(graphicID) {
+  return { type: 'SHOW_TEXT', graphicID}
 }
 
 
@@ -9,9 +9,9 @@ export function showNextGraphic(graphicID) {
 //   return { type: 'NEXT_MEMBER_TYPE', memberId }
 // }
 //***********?????????????????????????????????????????????????????
-export function enableVRMode() {
-  return { type: 'ENABLE_VR_MODE' }
-}
+// export function enableVRMode() {
+//   return { type: 'ENABLE_VR_MODE' }
+// }
 
 // export function disableVRMode() {
 //   return { type: 'DISABLE_VR_MODE' }

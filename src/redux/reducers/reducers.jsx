@@ -1,9 +1,9 @@
 import uuid from 'uuid';
 
-export var showGraphicReducer = (state = true, action) => {
+export var showTextReducer = (state = true, action) => {
   switch (action.type) {
-    case 'SHOW_NEXT_GRAPHIC':
-      return action.showGraphic;
+    case 'SHOW_TEXT':
+      return action.showText;
     default:
       return state;
   }
