@@ -9,7 +9,7 @@ class Graphic extends Component {
   handleClick = (e) => {
     console.log("huston we have a click");
     let {dispatch} = this.props;
-    dispatch(showText('instruction'));
+    dispatch(showText('hk_instruction'));
   }
 
   render() {
