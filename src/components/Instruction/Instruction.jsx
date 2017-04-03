@@ -14,11 +14,13 @@ class Instruction extends Component {
     let Clue = () => {
       if(this.props.showText == 'hk_intro') {
         return (
-          <Entity text={{value: 'He\'s been kidnapped, its up to you to save him!', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
+          <Entity text={{value: 'He\'s been kidnapped, its up to you to save him!', align: 'center', wrapCount: 15 }}
+                  position={{x: 0, y: 2, z: -1.2}}/>
         )
       } else if(this.props.showText == 'hk_instruction') {
         return(
-          <Entity text={{value: 'They took him up the Big Apple, they were going to drop him but someone stole him before they could', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
+          <Entity text={{value: 'They took him up the Big Apple, they were going to drop him but someone stole him before they could', align: 'center', wrapCount: 15}}
+                  position={{x: 0, y: 2, z: -1.2}}/>
         )
       } else {
         return console.log('boop');
