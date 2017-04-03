@@ -9,10 +9,16 @@ import Assets from '../Assets/Assets';
 import Sky from '../Sky/Sky';
 import Graphic from '../Graphic/Graphic';
 import Instruction from '../Instruction/Instruction'
+var firebase = require("firebase/app");
+
+// Leave out Storage
+//require("firebase/storage");
 
 class Main extends Component {
 
   render () {
+
+
     return (
       <Scene>
         <a-assets>
@@ -32,6 +38,7 @@ class Main extends Component {
         </Entity>
 
       </Scene>
+
     );
   }
 }

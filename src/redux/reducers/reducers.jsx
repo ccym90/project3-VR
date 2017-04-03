@@ -1,6 +1,6 @@
 import uuid from 'uuid';
 
-export var showTextReducer = (state = true, action) => {
+export var showTextReducer = (state = 'hk_intro', action) => {
   switch (action.type) {
     case 'SHOW_TEXT':
       return action.instruction;
@@ -9,7 +9,7 @@ export var showTextReducer = (state = true, action) => {
   }
 };
 
-export var locationReducer = (state = 'hongkong', action) => {
+export var locationReducer = (state = 'hong kong', action) => {
   switch (action.type) {
     case 'SET_LOCATION':
       return action.location;
