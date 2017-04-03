@@ -1,7 +1,9 @@
 // ****************instead of nextMemberType have showNextGraphic//changeLocation???????
-export function showNextGraphic(graphicID) {
-  return { type: 'SHOW_NEXT_GRAPHIC', graphicID}
-}
+
+export var showText = (instruction) => {
+  return { type: 'SHOW_TEXT', instruction };
+};
+
 
 export var setLocation = (location) => {
   return {

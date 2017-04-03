@@ -1,31 +1,22 @@
 import React, {Component} from 'react';
 import {Entity} from 'aframe-react';
 import { connect } from 'react-redux';
+import { showText } from '../../redux/actions/actions'
 
 
 class Graphic extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {color: 'red'};
-  }
-  //
-  // changeColor() {
-  //   const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
-  //   this.setState({
-  //     color: colors[Math.floor(Math.random() * colors.length)]
-  //   });
-  // }
 
   handleClick = (e) => {
-    console.log("huston we have a click")
-
+    console.log("huston we have a click");
+    let {dispatch} = this.props;
+    dispatch(showText('instruction'));
   }
 
   render() {
     return (
       <Entity
         geometry={{primitive: 'box'}}
-        material={{color: this.state.color}}
+        material={{color: 'purple'}}
         position={{x: 0, y: 1, z: -3}}
         events={{click: this.handleClick}}/>
     )
@@ -34,23 +25,6 @@ class Graphic extends Component {
 
 export default connect()(Graphic);
 
-// constructor(props) {
-//   super(props);
-//
-// }
-//
-//   this.state = {
-//     graphic: {}
-//   }
-//
-// handleChange = (e) => {
-//
-//
-// }
-//
-// handleClick = (e) => {
-//
-// }
 
 // ****** render click example changing colour
 // render() {
