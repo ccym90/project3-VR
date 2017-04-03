@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
 import {Entity} from 'aframe-react';
-// import classNames from 'classnames'
-// import { TYPE_TO_COLOR_MAP } from '../core'
 import { connect } from 'react-redux';
+
 
 class Graphic extends Component {
   constructor(props) {
     super(props);
     this.state = {color: 'red'};
   }
-
-  changeColor() {
-    const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
-    this.setState({
-      color: colors[Math.floor(Math.random() * colors.length)]
-    });
-  }
+  //
+  // changeColor() {
+  //   const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
+  //   this.setState({
+  //     color: colors[Math.floor(Math.random() * colors.length)]
+  //   });
+  // }
 
   handleClick = (e) => {
     console.log("huston we have a click")
@@ -24,14 +23,11 @@ class Graphic extends Component {
 
   render() {
     return (
-      <div className="graphicLocation">
-      <Entity id="graphic"
+      <Entity
         geometry={{primitive: 'box'}}
-        material={{color: this.state.color, opacity: 0.6}}
+        material={{color: this.state.color}}
         position={{x: 0, y: 1, z: -3}}
-        events={{click: this.changeColor.bind(this)}}>
-      </Entity>
-      </div>
+        events={{click: this.handleClick}}/>
     )
   }
 }
