@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 
 export var showTextReducer = (state = 'hk_intro', action) => {
   switch (action.type) {
@@ -15,5 +14,5 @@ export var locationReducer = (state = 'hong kong', action) => {
       return action.location;
     default:
       return state;
-  }
+    }
 };

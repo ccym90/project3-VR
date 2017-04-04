@@ -8,7 +8,8 @@ import Button from '../Button/Button';
 import Assets from '../Assets/Assets';
 import Sky from '../Sky/Sky';
 import Graphic from '../Graphic/Graphic';
-import Instruction from '../Instruction/Instruction'
+import Instruction from '../Instruction/Instruction';
+import timertext from '../Timer/Timer'
 var firebase = require("firebase/app");
 
 // Leave out Storage
@@ -18,11 +19,10 @@ class Main extends Component {
 
   render () {
 
-
     return (
       <Scene>
         <a-assets>
-          <img id="groundTexture" alt="" src="https://cdn.aframe.io/a-painter/images/floor.jpg"/>
+        <img id="groundTexture" alt="" src="https://cdn.aframe.io/a-painter/images/floor.jpg"/>
         </a-assets>
         <Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
         <Entity primitive="a-light" type="ambient" color="#445451"/>
@@ -32,7 +32,7 @@ class Main extends Component {
         <Sky/>
         <Button />
         <Graphic/>
-
+        <a-entity timertext text></a-entity>
         <Entity primitive="a-camera">
           <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
         </Entity>
