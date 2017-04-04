@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Entity, Cylinder } from 'aframe-react';
 import { connect } from 'react-redux';
-import { setLocation } from '../../redux/actions/actions'
+import { setLocation, setSignPostR, setSignPostL } from '../../redux/actions/actions'
 import thumbCity from '../Assets/thumb-city.png';
 import ocarina from '../Assets/ocarina.mp3'
 
@@ -13,15 +13,19 @@ class Button extends Component {
 			let {dispatch} = this.props;
 			if (toggle){
 				dispatch(setLocation('newyork'));
+				dispatch(setSignPostR('newyork'));
+				dispatch(setSignPostL('newyork'));
 				toggle = false;
 			} else {
 				dispatch(setLocation('hongkong'));
+				dispatch(setSignPostR('hongkong'));
+				dispatch(setSignPostL('hongkong'));
 				toggle = true;
 			}
 		}
 
 		return(
-			<Entity position={{x: 3, y: 1.5, z: -3}} >
+			<Entity position={{x: 0, y: 1.5, z: -3}} >
 				<audio id="click-sound" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 				<img id="city-thumb" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg"/>
 				<img id="logo" alt="" crossOrigin="anonymous" src={thumbCity}/>
@@ -32,7 +36,7 @@ class Button extends Component {
 					text={{value: `Go to New York.`, align: `center` }}
 					events={{click: this.handleClick}}
 					sound={{ on: 'click', src: '#click-sound'}}
-					sound={{ src: '#music', autoplay: true, loop: true, volume: 0.5 }}
+					sound={{ src: '#music', autoplay: true, loop: true, volume: 0.1 }}
 					/>
 				<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
 					material={{color: '#200f08' }}

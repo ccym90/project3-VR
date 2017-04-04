@@ -8,7 +8,7 @@ class Sky extends Component {
 
 	render() {
 		let fadeAnimation = () => {
-			console.log('fade');
+			// console.log('fade animation');
 		}
 
 		let renderSky = () => {

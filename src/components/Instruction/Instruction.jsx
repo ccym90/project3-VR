@@ -9,7 +9,7 @@ class Instruction extends Component {
   render() {
 
     let textChange = this.props.showText;
-    console.log("state", textChange);
+    // console.log("state", textChange);
 
     let Clue = () => {
       if(this.props.showText === 'hk_intro') {

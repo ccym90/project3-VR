@@ -44,6 +44,4 @@ class Main extends Component {
 }
 
 export default Main;
-
-
 // <Entity particle-system={{preset: 'snow', particleCount: 2000}}/>
