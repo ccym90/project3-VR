@@ -9,7 +9,7 @@ const store = initStore();
 store.subscribe( () => {
   var state = store.getState();
   // setTodos(state.todos);
-  console.log('New State', state);
+  console.log('New State:', state);
 });
 
 class App extends Component {
