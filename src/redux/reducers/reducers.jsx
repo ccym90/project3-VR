@@ -1,10 +1,10 @@
 
 const initialState = {
   showText: 'hk_intro',
-  location: 'hongkong',
+  location: 'castle',
   signpost: {
-    right: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
-		left: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
+    right: { destination: 'darkwoods', position: {x: 3, y: 1.5, z: -3}, rotation: {x:0, y:-45, z:0}, textvalue: 'To Forest', isVisible: false },
+		left: { destination: 'field', position: {x: -3, y: 1.5, z: -3}, rotation: {x:0, y:45, z:0}, textvalue: 'To Fields', isVisible: false },
   }
 };
 
