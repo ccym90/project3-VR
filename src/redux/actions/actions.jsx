@@ -1,6 +1,3 @@
-export var showText = (instruction) => {
-	return { type: 'SHOW_TEXT', instruction };
-};
 
 export var setLocation = (location) => {
 	return {
@@ -8,6 +5,15 @@ export var setLocation = (location) => {
 		location
 	};
 };
+
+export var showText = (instruction) => {
+	return { type: 'SHOW_TEXT', instruction };
+};
+
+export var showSignPosts = () => {
+	return { type: 'SHOW_POSTS', visibility: true };
+};
+
 
 export var setSignPostR = (location) => {
 	switch (location) {

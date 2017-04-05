@@ -14,6 +14,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// var provider = new firebase.auth.GoogleAuthProvider();
+// firebase.auth().signInWithRedirect(provider); //this sign in redirect method most suitble for mobiles
 
 export let initStore = () => {
 

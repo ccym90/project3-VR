@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Entity} from 'aframe-react';
 import { connect } from 'react-redux';
-import { showText } from '../../redux/actions/actions'
-
+import { showText, showSignPosts } from '../../redux/actions/actions'
 
 class Graphic extends Component {
 
@@ -10,6 +9,8 @@ class Graphic extends Component {
     console.log("huston we have a click");
     let {dispatch} = this.props;
     dispatch(showText('hk_instruction'));
+    console.log("the graphic props", this.props);
+    dispatch(showSignPosts());
   }
 
   render() {
