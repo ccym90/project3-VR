@@ -13,33 +13,32 @@ var firebase = require("firebase/app");
 
 // Leave out Storage
 //require("firebase/storage");
-
 class Main extends Component {
 
-  render () {
+	render () {
 
-    return (
-      <Scene>
-        <a-assets>
-          <img id="groundTexture" alt="" src="https://cdn.aframe.io/a-painter/images/floor.jpg"/>
-        </a-assets>
-        <Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
-        <Entity primitive="a-light" type="ambient" color="#445451"/>
-        <Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
+		return (
+			<Scene>
+				<a-assets>
+					<img id="groundTexture" alt="" src="https://cdn.aframe.io/a-painter/images/floor.jpg"/>
+				</a-assets>
+				<Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
+				<Entity primitive="a-light" type="ambient" color="#445451"/>
+				<Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
 
-        <Instruction/>
-        <Sky/>
-        <Button />
-        <Graphic/>
+				<Instruction/>
+				<Sky/>
+				<Button />
+				<Graphic/>
 
-        <Entity primitive="a-camera">
-          <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
-        </Entity>
+				<Entity primitive="a-camera">
+					<Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
+				</Entity>
 
-      </Scene>
+			</Scene>
 
-    );
-  }
+		);
+	}
 }
 
 export default Main;

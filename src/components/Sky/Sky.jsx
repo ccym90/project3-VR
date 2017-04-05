@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
+import ocarina from '../Assets/ocarina.mp3'
+
 
 class Sky extends Component {
 
@@ -17,7 +19,12 @@ class Sky extends Component {
 					return (
 						<Entity>
 							<img id="skyTexture" alt="" src="https://cdn.aframe.io/a-painter/images/sky.jpg"/>
-							<Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
+							<audio id="music" alt="" crossOrigin="anonymous" src={ocarina}></audio>
+							<Entity primitive="a-sky"
+								height="2048" radius="30" src="#skyTexture"
+								theta-length="90" width="2048"
+								sound={{ src: '#music', autoplay: true, loop: true, volume: 0.5 }}
+								/>
 						</Entity>
 					)
 				case 'newyork':

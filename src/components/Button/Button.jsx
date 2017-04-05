@@ -3,51 +3,109 @@ import { Entity, Cylinder } from 'aframe-react';
 import { connect } from 'react-redux';
 import { setLocation, setSignPostR, setSignPostL } from '../../redux/actions/actions'
 import thumbCity from '../Assets/thumb-city.png';
-import ocarina from '../Assets/ocarina.mp3'
 
 class Button extends Component {
 	render() {
 		let toggle = true;
 
 		this.handleClick = (e) => {
-			let {dispatch} = this.props;
+			let {dispatch, location} = this.props;
+			let {right, left} = this.props.signpost;
 			if (toggle){
 				dispatch(setLocation('newyork'));
 				dispatch(setSignPostR('newyork'));
 				dispatch(setSignPostL('newyork'));
+				console.log('this is the right?', right)
+				console.log('this is the left?', left)
 				toggle = false;
 			} else {
 				dispatch(setLocation('hongkong'));
 				dispatch(setSignPostR('hongkong'));
 				dispatch(setSignPostL('hongkong'));
+				console.log('this is the right?', right)
+				console.log('this is the left?', left)
 				toggle = true;
 			}
 		}
 
+		this.renderSignPostRight = (e) => {
+			if(this.props.signpost.right){
+				let { destination, isVisible, position, rotation, textvalue } = this.props.signpost.right;
+				// +++ set visible={isVisible} for production
+				return (
+					<Entity position={position}>
+						<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
+							rotation={rotation}
+							material={{color: '#200f08', src: `#logo`, side:`double` }}
+							text={{value: textvalue, align: `center` }}
+							events={{click: this.handleClick}}
+							sound={{ on: 'click', src: '#click-sound'}}
+							visible={true}
+							/>
+						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
+							material={{color: '#200f08' }}
+							position={{x: 0, y: -1, z: 0}}
+							/>
+					</Entity>
+				)
+			}
+			return (
+				<Entity position={{x: 0, y: 1.5, z: -3}}>
+					<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
+						rotation={{x:0, y:-45, z:0}}
+						material={{color: '#200f08', src: `#logo`, side:`double` }}
+						text={{value: `Default Sign.`, align: `center` }}
+						events={{click: this.handleClick}}
+						sound={{ on: 'click', src: '#click-sound'}}
+						/>
+					<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
+						material={{color: '#200f08' }}
+						position={{x: 0, y: -1, z: 0}}
+						/>
+				</Entity>
+			)
+		}
+
+		this.renderSignPostLeft = (e) => {
+			if(this.props.signpost.left){
+				let { destination, isVisible, position, rotation, textvalue } = this.props.signpost.left;
+				// +++ set visible={isVisible} for production
+				return (
+					<Entity position={position}>
+						<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
+							rotation={rotation}
+							material={{color: '#200f08', src: `#logo`, side:`double` }}
+							text={{value: textvalue, align: `center` }}
+							events={{click: this.handleClick}}
+							sound={{ on: 'click', src: '#click-sound'}}
+							visible={true}
+							/>
+						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
+							material={{color: '#200f08' }}
+							position={{x: 0, y: -1, z: 0}}
+							/>
+					</Entity>
+				)
+			}
+		}
+
+		// { this.renderSignPostRight() }
 		return(
-			<Entity position={{x: 0, y: 1.5, z: -3}} >
+			<Entity>
 				<audio id="click-sound" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 				<img id="city-thumb" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg"/>
 				<img id="logo" alt="" crossOrigin="anonymous" src={thumbCity}/>
-				<audio id="music" alt="" crossOrigin="anonymous" src={ocarina}></audio>
-				<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
-					rotation={{x:0, y:-45, z:0}}
-					material={{color: '#200f08', src: `#logo`, side:`double` }}
-					text={{value: `Go to New York.`, align: `center` }}
-					events={{click: this.handleClick}}
-					sound={{ on: 'click', src: '#click-sound'}}
-					sound={{ src: '#music', autoplay: true, loop: true, volume: 0.1 }}
-					/>
-				<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
-					material={{color: '#200f08' }}
-					position={{x: 0, y: -1, z: 0}}
-					/>
+				{ this.renderSignPostRight() }
+				{ this.renderSignPostLeft() }
 			</Entity>
 		)
 	}
 }
-export default connect()(Button);
-
+export default connect(
+  (state) => {
+    return state;
+  }
+)(Button);
 /*
 
 event-set__1={{_event: 'mousedown', property: 'scale', to:'1 1 1' }}

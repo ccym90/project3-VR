@@ -3,8 +3,8 @@ const initialState = {
   showText: '',
   location: '',
   signpost: {
-    right: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
-		left: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
+    // right: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
+		// left: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
   }
 };
 
