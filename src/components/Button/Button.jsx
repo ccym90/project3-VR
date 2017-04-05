@@ -8,22 +8,51 @@ class Button extends Component {
 	render() {
 		let toggle = true;
 
-		this.handleClick = (e) => {
+		this.handleLeftClick = (e) => {
 			let {dispatch, location} = this.props;
-			let {right, left} = this.props.signpost;
+			let {left} = this.props.signpost;
+			console.log('left was clicked!', left.destination);
 			if (toggle){
 				dispatch(setLocation('newyork'));
 				dispatch(setSignPostR('newyork'));
 				dispatch(setSignPostL('newyork'));
-				console.log('this is the right?', right)
-				console.log('this is the left?', left)
 				toggle = false;
 			} else {
 				dispatch(setLocation('hongkong'));
 				dispatch(setSignPostR('hongkong'));
 				dispatch(setSignPostL('hongkong'));
-				console.log('this is the right?', right)
-				console.log('this is the left?', left)
+				toggle = true;
+			}
+		}
+
+		this.handleClick = (e) => {
+			let {dispatch, location} = this.props;
+			if (toggle){
+				dispatch(setLocation('newyork'));
+				dispatch(setSignPostR('newyork'));
+				dispatch(setSignPostL('newyork'));
+				toggle = false;
+			} else {
+				dispatch(setLocation('hongkong'));
+				dispatch(setSignPostR('hongkong'));
+				dispatch(setSignPostL('hongkong'));
+				toggle = true;
+			}
+		}
+
+		this.handleRightClick = (e) => {
+			let {dispatch, location} = this.props;
+			let {right} = this.props.signpost;
+			console.log('right was clicked!',right.destination);
+			if (toggle){
+				dispatch(setLocation('newyork'));
+				dispatch(setSignPostR('newyork'));
+				dispatch(setSignPostL('newyork'));
+				toggle = false;
+			} else {
+				dispatch(setLocation('hongkong'));
+				dispatch(setSignPostR('hongkong'));
+				dispatch(setSignPostL('hongkong'));
 				toggle = true;
 			}
 		}
@@ -33,12 +62,12 @@ class Button extends Component {
 				let { destination, isVisible, position, rotation, textvalue } = this.props.signpost.right;
 				// +++ set visible={isVisible} for production
 				return (
-					<Entity position={position}>
+					<Entity position={position} visible={true}>
 						<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
 							rotation={rotation}
 							material={{color: '#200f08', src: `#logo`, side:`double` }}
 							text={{value: textvalue, align: `center` }}
-							events={{click: this.handleClick}}
+							events={{click: this.handleRightClick}} 
 							sound={{ on: 'click', src: '#click-sound'}}
 							visible={true}
 							/>
@@ -51,10 +80,10 @@ class Button extends Component {
 			}
 			return (
 				<Entity position={{x: 0, y: 1.5, z: -3}}>
-					<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
+					<Entity id={'ball'} geometry={{primitive: 'plane', width: 2, height: 1}}
 						rotation={{x:0, y:-45, z:0}}
 						material={{color: '#200f08', src: `#logo`, side:`double` }}
-						text={{value: `Default Sign.`, align: `center` }}
+						text={{value: `SOMETHING WENT WRONG.`, align: `center` }}
 						events={{click: this.handleClick}}
 						sound={{ on: 'click', src: '#click-sound'}}
 						/>
@@ -71,12 +100,11 @@ class Button extends Component {
 				let { destination, isVisible, position, rotation, textvalue } = this.props.signpost.left;
 				// +++ set visible={isVisible} for production
 				return (
-					<Entity position={position}>
+					<Entity position={position} events={{click: this.handleLeftClick}} visible={true}>
 						<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
 							rotation={rotation}
 							material={{color: '#200f08', src: `#logo`, side:`double` }}
 							text={{value: textvalue, align: `center` }}
-							events={{click: this.handleClick}}
 							sound={{ on: 'click', src: '#click-sound'}}
 							visible={true}
 							/>
@@ -89,7 +117,6 @@ class Button extends Component {
 			}
 		}
 
-		// { this.renderSignPostRight() }
 		return(
 			<Entity>
 				<audio id="click-sound" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
@@ -107,6 +134,7 @@ export default connect(
   }
 )(Button);
 /*
+// { this.renderSignPostLeft() }
 
 event-set__1={{_event: 'mousedown', property: 'scale', to:'1 1 1' }}
 event-set__2={{_event: 'mouseup', property: 'scale', to:'1.2 1.2 1' }}
