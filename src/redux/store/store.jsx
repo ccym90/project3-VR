@@ -1,5 +1,5 @@
 import { createStore, compose, combineReducers } from 'redux';
-import { signpostReducer, locationReducer, showTextReducer, revealClueReducer} from '../reducers/reducers';
+import { signpostReducer, locationReducer, showTextReducer } from '../reducers/reducers';
 import { reduxFirebase } from 'react-redux-firebase'
 var firebase = require("firebase");
 
@@ -22,6 +22,7 @@ export let initStore = () => {
     showText: showTextReducer,
     location: locationReducer,
     signpost: signpostReducer
+
   });
 
   const store = createStore( reducer, compose(

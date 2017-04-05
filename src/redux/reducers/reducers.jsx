@@ -1,4 +1,3 @@
-// import uuid from 'uuid';
 const initialState = {
   showText: '',
   location: '',
@@ -7,6 +6,7 @@ const initialState = {
 		// left: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
   }
 };
+
 
 export var showTextReducer = (state = 'hk_intro', action) => {
 	switch (action.type) {
@@ -18,6 +18,7 @@ export var showTextReducer = (state = 'hk_intro', action) => {
 };
 
 export var locationReducer = (state = 'hong kong', action) => {
+
 	switch (action.type) {
 		case 'SET_LOCATION':
 			return action.location;

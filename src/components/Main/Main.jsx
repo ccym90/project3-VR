@@ -8,7 +8,8 @@ import Button from '../Button/Button';
 import Assets from '../Assets/Assets';
 import Sky from '../Sky/Sky';
 import Graphic from '../Graphic/Graphic';
-import Instruction from '../Instruction/Instruction'
+import Instruction from '../Instruction/Instruction';
+import timertext from '../Timer/Timer'
 var firebase = require("firebase/app");
 
 // Leave out Storage
@@ -16,7 +17,6 @@ var firebase = require("firebase/app");
 class Main extends Component {
 
 	render () {
-
 		return (
 			<Scene>
 				<a-assets>
@@ -34,9 +34,7 @@ class Main extends Component {
 				<Entity primitive="a-camera">
 					<Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
 				</Entity>
-
 			</Scene>
-
 		);
 	}
 }

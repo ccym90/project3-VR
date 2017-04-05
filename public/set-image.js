@@ -1,19 +1,23 @@
+import hksky from '../src/Sky/images/urban.jpg';
+
 /* global AFRAME */
 
 /**
  * Component that listens to an event, fades out an entity, swaps the texture, and fades it
  * back in.
  */
+
+
 AFRAME.registerComponent('set-image', {
   schema: {
     on: {type: 'string'},
     target: {type: 'selector'},
-    src: {type: 'string'},
-    dur: {type: 'number', default: 300}
+    src: {hksky}
   },
 
   init: function () {
     var data = this.data;
+    console.log("Whats the data", data);
     var el = this.el;
 
     this.setupFadeAnimation();
