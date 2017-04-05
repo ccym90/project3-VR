@@ -9,8 +9,8 @@ import Assets from '../Assets/Assets';
 import Sky from '../Sky/Sky';
 import Graphic from '../Graphic/Graphic';
 import Instruction from '../Instruction/Instruction';
-import timertext from '../Timer/Timer'
-var firebase = require("firebase/app");
+import timertext from '../Timer/Timer';
+// var firebase = require("firebase/app");
 
 // Leave out Storage
 //require("firebase/storage");
@@ -32,7 +32,23 @@ class Main extends Component {
 				<Graphic/>
 
 				<Entity primitive="a-camera">
-					<Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
+          <a-entity cursor="fuse: true; fuseTimeout: 500"
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                    material="color: white; shader: flat">
+            <a-animation begin="click"
+                        easing="ease-in"
+                        attribute="scale"
+                        dur="150"
+                        fill="backwards"
+                        from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+            <a-animation begin="cursor-fusing"
+                        easing="ease-in"
+                        attribute="scale"
+                        dur="1500"
+                        fill="forwards"
+                        from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+          </a-entity>
 				</Entity>
 			</Scene>
 		);
