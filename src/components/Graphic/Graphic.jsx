@@ -6,10 +6,13 @@ import { showText } from '../../redux/actions/actions'
 
 class Graphic extends Component {
 
+
+
   handleClick = (e) => {
     console.log("huston we have a click");
     let {dispatch} = this.props;
     dispatch(showText('hk_instruction'));
+    console.log("the graphic props", this.props);
   }
 
   render() {

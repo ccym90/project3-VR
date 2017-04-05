@@ -1,24 +1,23 @@
+
 const initialState = {
-  showText: '',
-  location: '',
+  showText: 'hk_intro',
+  location: 'hongkong',
   signpost: {
     right: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
 		left: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
   }
 };
 
-
 export var showTextReducer = (state = 'hk_intro', action) => {
-	switch (action.type) {
-		case 'SHOW_TEXT':
-			return action.instruction;
-		default:
-			return state;
-	}
+  switch (action.type) {
+    case 'SHOW_TEXT':
+    return action.instruction;
+    default:
+    return state;
+  }
 };
 
 export var locationReducer = (state = 'hong kong', action) => {
-
 	switch (action.type) {
 		case 'SET_LOCATION':
 			return action.location;
