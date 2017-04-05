@@ -25,7 +25,7 @@ export var setSignPostR = (location) => {
 			return {
 				type: 'SET_SIGN_R_LOCATION',
 				destination: 'iceland',
-				position: {x: 3, y: 1.5, z: -5},
+				position: {x: 2, y: 1.5, z: -5},
 				rotation: {x:0, y:-45, z:0},
 				textvalue: 'welcome to new york',
 				isVisible: false
@@ -49,7 +49,7 @@ export var setSignPostL = (location) => {
 			return {
 				type: 'SET_SIGN_L_LOCATION',
 				destination: 'alaska',
-				position: {x: 3, y: 1.5, z: -3},
+				position: {x: -3, y: 1.5, z: -3},
 				rotation: {x:0, y:-45, z:0},
 				textvalue: 'welcome to new york',
 				isVisible: false
@@ -58,7 +58,7 @@ export var setSignPostL = (location) => {
 			return {
 				type: 'SET_SIGN_L_LOCATION',
 				destination: 'greenland',
-				position: {x: 3, y: 1.5, z: -5},
+				position: {x: -2, y: 1.5, z: -5},
 				rotation: {x:0, y:-45, z:0},
 				textvalue: 'welcome to new york',
 				isVisible: false
@@ -67,7 +67,7 @@ export var setSignPostL = (location) => {
 			return {
 				type: 'SET_SIGN_L_LOCATION',
 				destination: 'ERROR LAND',
-				position: {x: 1, y: 1.5, z: -3},
+				position: {x: -1, y: 1.5, z: -3},
 				rotation: {x:0, y:-45, z:0},
 				textvalue: 'OH SHI-',
 				isVisible: false
