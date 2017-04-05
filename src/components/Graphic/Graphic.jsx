@@ -17,7 +17,7 @@ class Graphic extends Component {
     return (
       <Entity
         geometry={{primitive: 'box'}}
-        material={{color: 'purple'}}
+        material={{color: 'blue'}}
         position={{x: 0, y: 1, z: -3}}
         events={{click: this.handleClick}}/>
     )
