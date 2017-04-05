@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-// import uuid from 'uuid';
 const initialState = {
   showText: '',
   location: '',
@@ -9,7 +6,7 @@ const initialState = {
 		left: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
   }
 };
->>>>>>> 7ad96b512cc6dabee1952b06886eb70ed00c2276
+
 
 export var showTextReducer = (state = 'hk_intro', action) => {
 	switch (action.type) {
@@ -21,14 +18,7 @@ export var showTextReducer = (state = 'hk_intro', action) => {
 };
 
 export var locationReducer = (state = 'hong kong', action) => {
-<<<<<<< HEAD
-  switch (action.type) {
-    case 'SET_LOCATION':
-      return action.location;
-    default:
-      return state;
-    }
-=======
+
 	switch (action.type) {
 		case 'SET_LOCATION':
 			return action.location;
@@ -64,5 +54,4 @@ export var signpostReducer = (state = initialState.signpost , action) => {
 		default:
 			return state;
 	}
->>>>>>> 7ad96b512cc6dabee1952b06886eb70ed00c2276
 };
