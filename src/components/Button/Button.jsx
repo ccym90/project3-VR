@@ -6,63 +6,35 @@ import thumbCity from '../Assets/thumb-city.png';
 
 class Button extends Component {
 	render() {
-		let toggle = true;
 
 		this.handleLeftClick = (e) => {
 			let { dispatch } = this.props;
-			let { left } = this.props.signpost;
-			// dispatch left.destination;
-			if (toggle){
-				dispatch(setLocation('newyork'));
-				dispatch(setSignPostR('newyork'));
-				dispatch(setSignPostL('newyork'));
-				toggle = false;
-			} else {
-				dispatch(setLocation('hongkong'));
-				dispatch(setSignPostR('hongkong'));
-				dispatch(setSignPostL('hongkong'));
-				toggle = true;
-			}
+			let { destination } = this.props.signpost.left;
+			dispatch(setLocation(destination));
+			dispatch(setSignPostR(destination));
+			dispatch(setSignPostL(destination));
 		}
 
 		this.handleRightClick = (e) => {
-			let {dispatch} = this.props;
-			let {right} = this.props.signpost;
-			// dispatch left.destination;
-			if (toggle){
-				dispatch(setLocation('newyork'));
-				dispatch(setSignPostR('newyork'));
-				dispatch(setSignPostL('newyork'));
-				toggle = false;
-			} else {
-				dispatch(setLocation('hongkong'));
-				dispatch(setSignPostR('hongkong'));
-				dispatch(setSignPostL('hongkong'));
-				toggle = true;
-			}
+			let { dispatch } = this.props;
+			let { destination } = this.props.signpost.right;
+			dispatch(setLocation(destination));
+			dispatch(setSignPostR(destination));
+			dispatch(setSignPostL(destination));
 		}
 
 		this.handleClick = (e) => {
 			let {dispatch} = this.props;
-			if (toggle){
-				dispatch(setLocation('newyork'));
-				dispatch(setSignPostR('newyork'));
-				dispatch(setSignPostL('newyork'));
-				toggle = false;
-			} else {
-				dispatch(setLocation('hongkong'));
-				dispatch(setSignPostR('hongkong'));
-				dispatch(setSignPostL('hongkong'));
-				toggle = true;
-			}
+			dispatch(setLocation('castle'));
+			dispatch(setSignPostR('castle'));
+			dispatch(setSignPostL('castle'));
 		}
 
 		this.renderSignPostRight = (e) => {
 			if(this.props.signpost.right){
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.right;
-				// +++ set visible={isVisible} for production
 				return (
-					<Entity position={position} visible={true}>
+					<Entity position={position} visible={isVisible}>
 						<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
 							rotation={rotation}
 							material={{color: '#200f08', src: `#logo`, side:`double` }}
@@ -77,29 +49,13 @@ class Button extends Component {
 					</Entity>
 				)
 			}
-			return (
-				<Entity position={{x: 0, y: 1.5, z: -3}}>
-					<Entity id={'ball'} geometry={{primitive: 'plane', width: 2, height: 1}}
-						rotation={{x:0, y:-45, z:0}}
-						material={{color: '#200f08', src: `#logo`, side:`double` }}
-						text={{value: `SOMETHING WENT WRONG.`, align: `center` }}
-						events={{click: this.handleClick}}
-						sound={{ on: 'click', src: '#click-sound'}}
-						/>
-					<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
-						material={{color: '#200f08' }}
-						position={{x: 0, y: -1, z: 0}}
-						/>
-				</Entity>
-			)
 		}
 
 		this.renderSignPostLeft = (e) => {
 			if(this.props.signpost.left){
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.left;
-				// +++ set visible={isVisible} for production
 				return (
-					<Entity position={position} events={{click: this.handleLeftClick}} visible={true}>
+					<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible}>
 						<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
 							rotation={rotation}
 							material={{color: '#200f08', src: `#logo`, side:`double` }}

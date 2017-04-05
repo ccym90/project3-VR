@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
-import ocarina from './ocarina.mp3'
-import basementmp3 from './basement-storage.mp3'
-import darkwoods1 from './images/darkwoods1.jpg';
-import darkwoods5 from './images/darkwoods5.jpg';
+import darkwoods from './images/darkwoods.jpg';
+import field from './images/darkwoodsgirl.jpg';
+import castle from './images/castle.jpg';
 
 
 class Sky extends Component {
@@ -16,22 +15,28 @@ class Sky extends Component {
 		let renderSky = () => {
 			{ fadeAnimation() }
 			switch (this.props.location) {
-				case 'hongkong':
+				case 'castle':
+				return(
+					<Entity>
+						<img id="castle" alt="" src={castle}/>
+						<Entity primitive="a-sky" height="2048" radius="30" src="#castle" theta-length="90" width="2048"
+							sound={{ src: '#music', autoplay: true, loop: true, volume: 1 }} />
+					</Entity>
+				)
+				case 'darkwoods':
 					return (
 						<Entity>
-							<img id="darkwoods1" alt="" src={darkwoods1}/>
-							<Entity primitive="a-sky"
-								height="2048" radius="30" src="#darkwoods1"
-								theta-length="90" width="2048"
-								sound={{ src: '#music', autoplay: true, loop: true, volume: 0.5 }}
-								/>
+							<img id="darkwoods" alt="" src={darkwoods}/>
+							<Entity primitive="a-sky" height="2048" radius="30" src="#darkwoods" theta-length="90" width="2048"
+								sound={{ src: '#music', autoplay: true, loop: true, volume: 1 }} />
 						</Entity>
 					)
-				case 'newyork':
+				case 'field':
 					return(
 						<Entity>
-							<img id="darkwoods5" alt="" src={darkwoods5}/>
-							<Entity primitive="a-sky" height="2048" radius="30" src="#darkwoods5" theta-length="90" width="2048"/>
+							<img id="field" alt="" src={field}/>
+							<Entity primitive="a-sky" height="2048" radius="30" src="#field" theta-length="90" width="2048"
+								sound={{ src: '#music', autoplay: true, loop: true, volume: 1 }} />
 						</Entity>
 					)
 				default:
@@ -42,10 +47,8 @@ class Sky extends Component {
 					)
 			}
 		}
-
 		return(
 			<Entity>
-				<audio id="music" alt="" crossOrigin="anonymous" src={ocarina}></audio>
 				{ renderSky() }
 			</Entity>
 		)

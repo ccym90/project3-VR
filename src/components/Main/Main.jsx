@@ -10,6 +10,8 @@ import Sky from '../Sky/Sky';
 import Graphic from '../Graphic/Graphic';
 import Instruction from '../Instruction/Instruction';
 import timertext from '../Timer/Timer'
+import musicOcarina from './ocarina.mp3'
+import musicBasement from './basement-storage.mp3'
 var firebase = require("firebase/app");
 
 // Leave out Storage
@@ -21,11 +23,12 @@ class Main extends Component {
 			<Scene>
 				<a-assets>
 					<img id="groundTexture" alt="" src="https://cdn.aframe.io/a-painter/images/floor.jpg"/>
+					<audio id="music" alt="" crossOrigin="anonymous" src={musicBasement}></audio>
 				</a-assets>
 				<Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
 				<Entity primitive="a-light" type="ambient" color="#445451"/>
 				<Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
-
+				
 				<Instruction/>
 				<Sky/>
 				<Button />
