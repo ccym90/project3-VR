@@ -50,7 +50,45 @@ export var signpostReducer = (state = initialState.signpost , action) => {
 					isVisible: action.isVisible
 				}
 			}
+    case 'SHOW_POSTS':
+      return {
+        ...state,
+        left:{
+          balls:'poop'
+        },
+        right:{
+          poop:'boop'
+        }
+      };
+    // case 'SHOW_POSTS':
+    //   return {
+    //     right: [
+    //     ...state,
+    //       {visibility: action.visibility}
+    //     ]
+    //   }
 		default:
 			return state;
 	}
 };
+/////////////////////////////////////////////////////////////////////////
+// case 'TOGGLE_TODO':
+//   return state.map((todo) => {
+//     if (todo.id === action.id) {
+//       var nextCompleted = !todo.completed;
+//
+//       return {
+//         ...todo,
+//         completed: nextCompleted,
+//         completedAt: nextCompleted ? moment().unix() : undefined
+//       };
+//     } else {
+//         return todo;
+//     }
+//   });
+//
+// case 'ADD_TODOS':
+//   return [
+//     ...state,
+//     ...action.todos
+//   ];

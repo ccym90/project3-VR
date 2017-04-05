@@ -40,7 +40,6 @@ class Button extends Component {
 							text={{value: textvalue, align: `center` }}
 							events={{click: this.handleClick}}
 							sound={{ on: 'click', src: '#click-sound'}}
-							visible={true}
 							/>
 						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
 							material={{color: '#200f08' }}
@@ -78,7 +77,6 @@ class Button extends Component {
 							text={{value: textvalue, align: `center` }}
 							events={{click: this.handleClick}}
 							sound={{ on: 'click', src: '#click-sound'}}
-							visible={true}
 							/>
 						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
 							material={{color: '#200f08' }}

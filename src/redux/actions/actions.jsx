@@ -6,9 +6,15 @@ export var setLocation = (location) => {
 	};
 };
 
-export var showText = (location, instruction) => {
+export var showText = (instruction) => {
 	return { type: 'SHOW_TEXT', instruction };
 };
+
+export var showSignPosts = () => {
+	return { type: 'SHOW_POSTS' };
+	visibility: true
+};
+
 
 export var setSignPostR = (location) => {
 	switch (location) {
