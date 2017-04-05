@@ -11,8 +11,7 @@ export var showText = (instruction) => {
 };
 
 export var showSignPosts = () => {
-	return { type: 'SHOW_POSTS' };
-	visibility: true
+	return { type: 'SHOW_POSTS', visibility: true };
 };
 
 
@@ -24,7 +23,7 @@ export var setSignPostR = (location) => {
 				destination: 'hawaii',
 				position: {x: 3, y: 1.5, z: -3},
 				rotation: {x:0, y:-45, z:0},
-				textvalue: 'welcome to new york',
+				textvalue: 'go to to hawaii',
 				isVisible: false
 			};
 		case 'hongkong':
@@ -33,7 +32,7 @@ export var setSignPostR = (location) => {
 				destination: 'iceland',
 				position: {x: 2, y: 1.5, z: -5},
 				rotation: {x:0, y:-45, z:0},
-				textvalue: 'welcome to new york',
+				textvalue: 'go to to iceland',
 				isVisible: false
 			};
 		default:
@@ -57,7 +56,7 @@ export var setSignPostL = (location) => {
 				destination: 'alaska',
 				position: {x: -3, y: 1.5, z: -3},
 				rotation: {x:0, y:-45, z:0},
-				textvalue: 'welcome to new york',
+				textvalue: 'go to to alaska',
 				isVisible: false
 			};
 		case 'hongkong':
@@ -66,7 +65,7 @@ export var setSignPostL = (location) => {
 				destination: 'greenland',
 				position: {x: -2, y: 1.5, z: -5},
 				rotation: {x:0, y:-45, z:0},
-				textvalue: 'welcome to new york',
+				textvalue: `go to greenland`,
 				isVisible: false
 			};
 		default:

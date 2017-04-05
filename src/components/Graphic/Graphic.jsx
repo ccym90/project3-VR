@@ -10,7 +10,7 @@ class Graphic extends Component {
     let {dispatch} = this.props;
     dispatch(showText('hk_instruction'));
     console.log("the graphic props", this.props);
-    dispatch(showSignPosts())
+    dispatch(showSignPosts());
   }
 
   render() {

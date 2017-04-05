@@ -3,21 +3,21 @@ const initialState = {
   showText: 'hk_intro',
   location: 'hongkong',
   signpost: {
-    // right: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
-		// left: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
+    right: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
+		left: { destination: '', position: {}, rotation: {}, textvalue: '', isVisible: false },
   }
 };
 
-export var showTextReducer = (state = 'hk_intro', action) => {
-  switch (action.type) {
-    case 'SHOW_TEXT':
-    return action.instruction;
-    default:
-    return state;
-  }
+export var showTextReducer = (state = initialState.showText, action) => {
+	switch (action.type) {
+		case 'SHOW_TEXT':
+			return action.instruction;
+		default:
+			return state;
+	}
 };
 
-export var locationReducer = (state = 'hong kong', action) => {
+export var locationReducer = (state = initialState.location, action) => {
 	switch (action.type) {
 		case 'SET_LOCATION':
 			return action.location;
@@ -52,43 +52,20 @@ export var signpostReducer = (state = initialState.signpost , action) => {
 			}
     case 'SHOW_POSTS':
       return {
-        ...state,
-        left:{
-          balls:'poop'
-        },
-        right:{
-          poop:'boop'
-        }
-      };
-    // case 'SHOW_POSTS':
-    //   return {
-    //     right: [
-    //     ...state,
-    //       {visibility: action.visibility}
-    //     ]
-    //   }
+          ...state,
+          left: {
+          ...state.left,
+            isVisible: action.visibility,
+          },
+          right: {
+          ...state.right,
+            isVisible: action.visibility,
+          }
+          // isVisible: action.visibility,
+          // ...state.right,
+          // isVisible: action.visibility,
+        };
 		default:
 			return state;
 	}
 };
-/////////////////////////////////////////////////////////////////////////
-// case 'TOGGLE_TODO':
-//   return state.map((todo) => {
-//     if (todo.id === action.id) {
-//       var nextCompleted = !todo.completed;
-//
-//       return {
-//         ...todo,
-//         completed: nextCompleted,
-//         completedAt: nextCompleted ? moment().unix() : undefined
-//       };
-//     } else {
-//         return todo;
-//     }
-//   });
-//
-// case 'ADD_TODOS':
-//   return [
-//     ...state,
-//     ...action.todos
-//   ];

@@ -1,17 +1,14 @@
 import React, {Component} from 'react';
 import {Entity} from 'aframe-react';
 import { connect } from 'react-redux';
-import { showPosts } from '../../redux/actions/actions'
-
-
+import { showText } from '../../redux/actions/actions'
 
 class Instruction extends Component {
 
   render() {
-    let dispatch = this.props;
+
     let textChange = this.props.showText;
     // console.log("state", textChange);
-
 
     let Clue = () => {
       if(this.props.showText === 'hk_intro') {
@@ -25,7 +22,7 @@ class Instruction extends Component {
                   position={{x: 0, y: 2, z: -1.2}}/>
         )
       } else {
-        return console.log('boop');
+        return console.log('boop error');
       }
     }
 
@@ -42,4 +39,3 @@ export default connect(
     return state;
   }
 )(Instruction);
-///***********************************************

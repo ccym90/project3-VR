@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
-import ocarina from '../Assets/ocarina.mp3'
-import hksky from './images/urban.jpg';
-import nysky from './images/newyork.jpg';
+import ocarina from './ocarina.mp3'
+import basementmp3 from './basement-storage.mp3'
+import darkwoods1 from './images/darkwoods1.jpg';
+import darkwoods5 from './images/darkwoods5.jpg';
+
+
 class Sky extends Component {
-
-
 	render() {
 		let fadeAnimation = () => {
 			// console.log('fade animation');
@@ -18,10 +19,9 @@ class Sky extends Component {
 				case 'hongkong':
 					return (
 						<Entity>
-							<audio id="music" alt="" crossOrigin="anonymous" src={ocarina}></audio>
-							<img id="skyTexture" alt="" src={hksky}/>
+							<img id="darkwoods1" alt="" src={darkwoods1}/>
 							<Entity primitive="a-sky"
-								height="2048" radius="30" src="#skyTexture"
+								height="2048" radius="30" src="#darkwoods1"
 								theta-length="90" width="2048"
 								sound={{ src: '#music', autoplay: true, loop: true, volume: 0.5 }}
 								/>
@@ -30,8 +30,8 @@ class Sky extends Component {
 				case 'newyork':
 					return(
 						<Entity>
-							<img id="city" alt="" src={nysky}/>
-							<Entity primitive="a-sky" height="2048" radius="30" src="#city" theta-length="90" width="2048"/>
+							<img id="darkwoods5" alt="" src={darkwoods5}/>
+							<Entity primitive="a-sky" height="2048" radius="30" src="#darkwoods5" theta-length="90" width="2048"/>
 						</Entity>
 					)
 				default:
@@ -45,8 +45,7 @@ class Sky extends Component {
 
 		return(
 			<Entity>
-				<img id="skyTexture" alt="" src={nysky}/>
-				<img id="city" alt="" src={hksky}/>
+				<audio id="music" alt="" crossOrigin="anonymous" src={ocarina}></audio>
 				{ renderSky() }
 			</Entity>
 		)
