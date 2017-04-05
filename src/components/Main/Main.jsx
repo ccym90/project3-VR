@@ -41,3 +41,17 @@ class Main extends Component {
 
 export default Main;
 // <Entity particle-system={{preset: 'snow', particleCount: 2000}}/>
+/*
+1.
+obj: gravestone
+onclick: he rises at nightfall
+signs: to woods, to field
+
+2.
+obj car
+on click: its locked
+on click: you drive away
+
+3.
+you picked up a car key
+ */

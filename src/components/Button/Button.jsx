@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Entity, Cylinder } from 'aframe-react';
+import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
 import { setLocation, setSignPostR, setSignPostL } from '../../redux/actions/actions'
 import thumbCity from '../Assets/thumb-city.png';
@@ -9,24 +9,9 @@ class Button extends Component {
 		let toggle = true;
 
 		this.handleLeftClick = (e) => {
-			let {dispatch, location} = this.props;
-			let {left} = this.props.signpost;
-			console.log('left was clicked!', left.destination);
-			if (toggle){
-				dispatch(setLocation('newyork'));
-				dispatch(setSignPostR('newyork'));
-				dispatch(setSignPostL('newyork'));
-				toggle = false;
-			} else {
-				dispatch(setLocation('hongkong'));
-				dispatch(setSignPostR('hongkong'));
-				dispatch(setSignPostL('hongkong'));
-				toggle = true;
-			}
-		}
-
-		this.handleClick = (e) => {
-			let {dispatch, location} = this.props;
+			let { dispatch } = this.props;
+			let { left } = this.props.signpost;
+			// dispatch left.destination;
 			if (toggle){
 				dispatch(setLocation('newyork'));
 				dispatch(setSignPostR('newyork'));
@@ -41,9 +26,24 @@ class Button extends Component {
 		}
 
 		this.handleRightClick = (e) => {
-			let {dispatch, location} = this.props;
+			let {dispatch} = this.props;
 			let {right} = this.props.signpost;
-			console.log('right was clicked!',right.destination);
+			// dispatch left.destination;
+			if (toggle){
+				dispatch(setLocation('newyork'));
+				dispatch(setSignPostR('newyork'));
+				dispatch(setSignPostL('newyork'));
+				toggle = false;
+			} else {
+				dispatch(setLocation('hongkong'));
+				dispatch(setSignPostR('hongkong'));
+				dispatch(setSignPostL('hongkong'));
+				toggle = true;
+			}
+		}
+
+		this.handleClick = (e) => {
+			let {dispatch} = this.props;
 			if (toggle){
 				dispatch(setLocation('newyork'));
 				dispatch(setSignPostR('newyork'));
@@ -59,7 +59,7 @@ class Button extends Component {
 
 		this.renderSignPostRight = (e) => {
 			if(this.props.signpost.right){
-				let { destination, isVisible, position, rotation, textvalue } = this.props.signpost.right;
+				let { isVisible, position, rotation, textvalue } = this.props.signpost.right;
 				// +++ set visible={isVisible} for production
 				return (
 					<Entity position={position} visible={true}>
@@ -67,7 +67,7 @@ class Button extends Component {
 							rotation={rotation}
 							material={{color: '#200f08', src: `#logo`, side:`double` }}
 							text={{value: textvalue, align: `center` }}
-							events={{click: this.handleRightClick}} 
+							events={{click: this.handleRightClick}}
 							sound={{ on: 'click', src: '#click-sound'}}
 							visible={true}
 							/>
@@ -97,7 +97,7 @@ class Button extends Component {
 
 		this.renderSignPostLeft = (e) => {
 			if(this.props.signpost.left){
-				let { destination, isVisible, position, rotation, textvalue } = this.props.signpost.left;
+				let { isVisible, position, rotation, textvalue } = this.props.signpost.left;
 				// +++ set visible={isVisible} for production
 				return (
 					<Entity position={position} events={{click: this.handleLeftClick}} visible={true}>
