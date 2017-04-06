@@ -23,7 +23,7 @@ export var setSignPostR = (location) => {
 				destination: 'darkwoods',
 				position: {x: 3, y: 1.5, z: -3},
 				rotation: {x:0, y:-45, z:0},
-				textvalue: 'To Forest',
+				textvalue: 'To Dark Woods',
 				isVisible: false
 			};
 		case 'castle2':
@@ -32,7 +32,7 @@ export var setSignPostR = (location) => {
 				destination: 'darkwoods',
 				position: {x: 3, y: 1.5, z: -3},
 				rotation: {x:0, y:-45, z:0},
-				textvalue: 'To Forest',
+				textvalue: 'To Dark Woods',
 				isVisible: true
 			};
 		case 'darkwoods':
@@ -100,7 +100,7 @@ export var setSignPostL = (location) => {
 				destination: 'darkwoods',
 				position: {x: -1, y: 1.5, z: -5},
 				rotation: {x:0, y:45, z:0},
-				textvalue: `To Forest`,
+				textvalue: `To Dark Woods`,
 				isVisible: true
 			};
 		default:
