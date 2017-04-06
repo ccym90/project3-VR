@@ -34,7 +34,7 @@ class Button extends Component {
 			if(this.props.signpost.right){
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.right;
 				return (
-					<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible}>
+					<Entity position={position} events={{click: this.handleRightClick}} visible={isVisible}>
 						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5, depth: .1}}
 							position={{x: 0, y: 1.25, z: 0}}
 							rotation={rotation}

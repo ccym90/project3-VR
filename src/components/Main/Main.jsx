@@ -27,7 +27,6 @@ class Main extends Component {
 				</a-assets>
 				<Entity primitive="a-light" type="ambient" color="#445451"/>
 				<Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
-				<Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
 
 				<Instruction/>
 				<Sky/>
