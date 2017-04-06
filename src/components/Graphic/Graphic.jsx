@@ -6,7 +6,7 @@ import { getKey, showText, showSignPosts } from '../../redux/actions/actions';
 class Graphic extends Component {
 
 	handleClick = (e) => {
-		console.log("huston we have a click", this.props.location)
+		console.log("huston we have a click", e)
 		let {dispatch} = this.props;
 		dispatch(showText('hk_instruction'));
 		dispatch(showSignPosts());
