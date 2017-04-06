@@ -23,7 +23,6 @@ class Graphic extends Component {
 	}
 
 	handleClick3 = (e) => {
-	// pick up key
 		let {dispatch} = this.props;
 		dispatch(getKey());
 		dispatch(showText('found'));

@@ -3,10 +3,13 @@ const initialState = {
   showText: 'hk_intro',
   location: 'castle',
   signpost: {
-    right: { destination: 'darkwoods', position: {x: 3, y: 1.5, z: -3}, rotation: {x:0, y:-45, z:0}, textvalue: 'To Forest', isVisible: false },
+    right: { destination: 'darkwoods',
+			position: {x: 6.28, y: 1.5, z: -3.65},
+			rotation: {x:0, y:-68.1, z:0},
+			textvalue: 'To Forest', isVisible: false },
 		left: { destination: 'field',
-			position: {x: -7.5, y: 2.4, z: 3},
-			rotation: {x:0, y:120, z:0},
+			position: {x: -7.23, y: 2.4, z: 5.39},
+			rotation: {x:0, y:163.8, z:0},
 			textvalue: 'To Fields', isVisible: false },
   },
   playerItems: {

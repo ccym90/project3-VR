@@ -31,43 +31,97 @@ class Button extends Component {
 
 		this.renderSignPostRight = (e) => {
 			if(this.props.signpost.right){
+				let loco = this.props.location;
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.right;
-				return (
-					<Entity position={position} events={{click: this.handleRightClick}} visible={isVisible}>
-						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5 }}
-							position={{x: 0, y: 1.25, z: 0}}
-							rotation={rotation}
-							material={{color: '#200f08', side:`double`, shader:`flat` }}
-							text={{value: textvalue, align: `center`, wrapCount: 10 }}
-							sound={{ on: 'click', src: '#click-sound'}}
-							/>
-						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
-							material={{color: '#200f08', shader:`flat`}}
-							position={{x: 0, y: -1, z: 0}}
-							/>
-					</Entity>
-				)
+				switch (loco) {
+					case 'castle':
+					case 'castle2':
+						return (
+							<Entity position={position} events={{click: this.handleRightClick}} visible={isVisible} rotation={rotation}>
+								<Entity geometry={{primitive: 'plane', width: 1.5, height: .5 }}
+									position={{x: 0, y: 1.25, z: 0}}
+									material={{color: '#200f08', side:`double`, shader:`flat` }}
+									text={{value: textvalue, align: `center`, wrapCount: 10 }}
+									sound={{ on: 'click', src: '#click-sound'}}
+									/>
+								<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
+									material={{color: '#200f08', shader:`flat`}}
+									position={{x: 0, y: -1, z: 0}}
+									/>
+							</Entity>
+						)
+					default:
+						return (
+							<Entity position={position} events={{click: this.handleRightClick}} visible={isVisible} rotation={rotation}>
+								<Entity geometry={{primitive: 'plane', width: 1.5, height: .5 }}
+									position={{x: 0, y: 1.25, z: 0}}
+									material={{color: '#200f08', side:`double`, shader:`flat` }}
+									text={{value: textvalue, align: `center`, wrapCount: 10 }}
+									sound={{ on: 'click', src: '#click-sound'}}
+									/>
+								<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
+									material={{color: '#200f08', shader:`flat`}}
+									position={{x: 0, y: -1, z: 0}}
+									/>
+							</Entity>
+						)
+				}
 			}
 		}
 
 		this.renderSignPostLeft = (e) => {
 			if(this.props.signpost.left){
+				let loco = this.props.location;
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.left;
-				return (
-					<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible}>
-						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5}}
-							position={{x: 0, y: 1.25, z: 0}}
-							rotation={rotation}
-							material={{color: '#200f08', side:`double`, shader:`flat` }}
-							text={{value: textvalue, align: `center`, wrapCount: 10 }}
-							sound={{ on: 'click', src: '#click-sound'}}
-							/>
-						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
-							material={{color: '#200f08', shader:`flat` }}
-							position={{x: 0, y: -1, z: 0}}
-							/>
-					</Entity>
-				)
+
+				switch (loco) {
+					case 'castle':
+					case 'castle2':
+						return (
+							<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible} rotation={rotation}>
+								<Entity geometry={{primitive: 'plane', width: 1.5, height: .5}}
+									position={{x: 0, y: 1.25, z: 0}}
+									material={{color: '#200f08', side:`double`, shader:`flat` }}
+									text={{value: textvalue, align: `center`, wrapCount: 10 }}
+									sound={{ on: 'click', src: '#click-sound'}}
+									/>
+								<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 2.8}}
+									material={{color: '#200f08', shader:`flat` }}
+									position={{x: 0, y: -0.3, z: 0}}
+									/>
+							</Entity>
+						)
+					case 'darkwoods':
+						return (
+							<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible} rotation={rotation}>
+								<Entity geometry={{primitive: 'plane', width: 1.5, height: .5 }}
+									position={{x: 0, y: 1.25, z: 0}}
+									material={{color: '#200f08', side:`double`, shader:`flat` }}
+									text={{value: textvalue, align: `center`, wrapCount: 10 }}
+									sound={{ on: 'click', src: '#click-sound'}}
+									/>
+								<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
+									material={{color: '#200f08', shader:`flat`}}
+									position={{x: 0, y: -1, z: 0}}
+									/>
+							</Entity>
+						)
+					default:
+						return (
+							<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible} rotation={rotation}>
+								<Entity geometry={{primitive: 'plane', width: 1.5, height: .5}}
+									position={{x: 0, y: 1.25, z: 0}}
+									material={{color: '#200f08', side:`double`, shader:`flat` }}
+									text={{value: textvalue, align: `center`, wrapCount: 10 }}
+									sound={{ on: 'click', src: '#click-sound'}}
+									/>
+								<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 2.8}}
+									material={{color: '#200f08', shader:`flat` }}
+									position={{x: 0, y: -.4, z: 0}}
+									/>
+							</Entity>
+						)
+					}
 			}
 		}
 
