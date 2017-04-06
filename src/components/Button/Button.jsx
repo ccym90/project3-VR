@@ -34,15 +34,15 @@ class Button extends Component {
 			if(this.props.signpost.right){
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.right;
 				return (
-					<Entity position={position} visible={isVisible}>
-						<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
+					<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible}>
+						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5, depth: .1}}
+							position={{x: 0, y: 1.25, z: 0}}
 							rotation={rotation}
 							material={{color: '#200f08', src: `#logo`, side:`double` }}
-							text={{value: textvalue, align: `center` }}
-							events={{click: this.handleRightClick}}
+							text={{value: textvalue, align: `center`, wrapCount: 10 }}
 							sound={{ on: 'click', src: '#click-sound'}}
 							/>
-						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
+						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
 							material={{color: '#200f08' }}
 							position={{x: 0, y: -1, z: 0}}
 							/>
@@ -56,13 +56,14 @@ class Button extends Component {
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.left;
 				return (
 					<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible}>
-						<Entity geometry={{primitive: 'plane', width: 2, height: 1}}
+						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5, depth: .1}}
+							position={{x: 0, y: 1.25, z: 0}}
 							rotation={rotation}
 							material={{color: '#200f08', src: `#logo`, side:`double` }}
-							text={{value: textvalue, align: `center` }}
+							text={{value: textvalue, align: `center`, wrapCount: 10 }}
 							sound={{ on: 'click', src: '#click-sound'}}
 							/>
-						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 1}}
+						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
 							material={{color: '#200f08' }}
 							position={{x: 0, y: -1, z: 0}}
 							/>
