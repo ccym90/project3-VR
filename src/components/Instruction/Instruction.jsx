@@ -7,35 +7,65 @@ class Instruction extends Component {
 
   render() {
 
-    // // console.log("state", textChange);
-    // let {dispatch} = dispatch(showText();
-    let {textChange} = this.props.showText;
 
     let Clue = () => {
-      // if(this.props.location === 'castle');
-      if (this.props.showText === 'hk_intro') {
-        return (
-          <Entity text={{value: 'Is that blood on the tombstone...?', align: 'center', wrapCount: 15 }}
-                  position={{x: 0, y: 2, z: -1.2}}/>
-        )
-      } else if(this.props.showText === 'hk_instruction') {
-        return(
-          <Entity text={{value: 'He rises at nightfall, you need to leave now!', align: 'center', wrapCount: 15}}
-                  position={{x: 0, y: 2, z: -1.2}}/>
-        )
-      } else if(this.props.showText === 'field') {
-        return(
-        <Entity text={{value: 'You found a key!', align: 'center', wrapCount: 15}}
-                 position={{x: 0, y: 2, z: -1.2}}/>
-        )
-      } else if(this.props.showText === 'darkwoodsclue') {
-        return(
-        <Entity text={{value: 'It\'s locked...you\'ll need a key', align: 'center', wrapCount: 15}}
-                 position={{x: 0, y: 2, z: -1.2}}/>
-        )
-      } else {
-        return console.log('boop error');
+      let textChange = this.props.showText;
+      let loco = this.props.location;
+
+      if(loco === 'field') {
+        if(textChange === 'found'){
+          return(
+            <Entity text={{value: 'You found a key!', align: 'center', wrapCount: 15}}
+            position={{x: 0, y: 2, z: -1.2}}/>
+          )
+        } else {
+          return(
+            <Entity text={{value: ' '}}/>
+          )
+        }
+      };
+
+      if(loco === 'castle') {
+        if (textChange === 'hk_intro') {
+          return (
+            <Entity text={{value: 'Is that blood on the tombstone...?', align: 'center', wrapCount: 15 }}
+            position={{x: 0, y: 2, z: -1.2}}/>
+          )
+        } else if(textChange === 'hk_instruction') {
+          return(
+            <Entity text={{value: 'He rises at nightfall, you need to leave now!', align: 'center', wrapCount: 15}}
+            position={{x: 0, y: 2, z: -1.2}}/>
+          )
+        }
       }
+
+      if(loco === 'darkwoods') {
+        if(textChange === 'darkwoodsclue') {
+          return (
+            <Entity text={{value: 'It\'s locked, you\'ll need a key', align: 'center', wrapCount: 15}}
+            position={{x: 0, y: 2, z: -1.2}}/>
+          )
+        } else if(textChange === 'finish') {
+          return (
+            <Entity text={{value: 'You managed to escape... this time...', align: 'center', wrapCount: 15}}
+            position={{x: 0, y: 2, z: -1.2}}/>
+          )
+        } else {
+          return(
+            <Entity text={{value: ' '}}/>
+          )
+        }
+      }
+
+      if(loco === 'castle2') {
+        if(textChange == 'castle2'){
+        }else{
+          return(
+            <Entity text={{value: ' '}}/>
+          )
+        }
+      }
+
     }
 
     return(
@@ -45,6 +75,20 @@ class Instruction extends Component {
     )
   }
 }
+
+//   let textChange = 'castle2'
+//   console.log("POOOOOOOOOOYYYYY", textChange)
+//   // textChange = 'castle2';
+//   return(
+//     <Entity text={{value: ' '}}/>
+//   )
+// };
+// if(loco === 'castle');
+// } else if(textChange === 'field') {
+//   return(
+//   <Entity text={{value: 'You found a key!', align: 'center', wrapCount: 15}}
+//            position={{x: 0, y: 2, z: -1.2}}/>
+//   )
 
 export default connect(
   (state) => {

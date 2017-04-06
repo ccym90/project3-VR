@@ -18,6 +18,13 @@ class Graphic extends Component {
     dispatch(showText('darkwoodsclue'));
   }
 
+
+  handleClick3 = (e) => {
+    let {dispatch} = this.props;
+    dispatch(showText('found'));
+    (console.log("CHANGE", this.props.showText))
+  }
+
   renderNewGraphic = () => {
     let {dispatch} = this.props;
     if(this.props.location === 'castle') {
@@ -36,15 +43,14 @@ class Graphic extends Component {
         position={{x: -1, y:1 , z: -5}}
         events={{click: this.handleClick2}}/>
       )
-    } else if
-    (this.props.location === 'field') {
-      dispatch(showText('field'));
+    } else if (this.props.location === 'field') {
+      // dispatch(showText('field'));
       return(
         <Entity
         geometry={{primitive: 'box'}}
         material={{color: 'yellow'}}
         position={{x: -3, y: 2, z: -3}}
-        events={{click: this.handleClick}}
+        events={{click: this.handleClick3}}
         visible="true"/>
       )
     }
