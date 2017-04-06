@@ -13,7 +13,7 @@ class Sky extends Component {
 		}
 
 		let renderSky = () => {
-			{ fadeAnimation() }
+			fadeAnimation()
 			switch (this.props.location) {
 				case 'castle':
 				case 'castle2':
@@ -104,5 +104,4 @@ class Sky extends Component {
 export default connect(
 	(state) => {
 		return state;
-	})
-	(Sky);
+	})(Sky);

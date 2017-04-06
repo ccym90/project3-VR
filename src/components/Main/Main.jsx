@@ -6,11 +6,9 @@ import {Entity, Scene} from 'aframe-react';
 import React, { Component } from 'react';
 import Camera from '../Camera'
 import Button from '../Button/Button';
-import Assets from '../Assets/Assets';
 import Sky from '../Sky/Sky';
 import Graphic from '../Graphic/Graphic';
 import Instruction from '../Instruction/Instruction';
-import musicOcarina from './ocarina.mp3'
 import musicBasement from './basement-storage.mp3'
 var firebase = require("firebase/app");
 

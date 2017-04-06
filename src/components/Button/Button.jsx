@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
 import { setLocation, setSignPostR, setSignPostL } from '../../redux/actions/actions'
-import thumbCity from '../Assets/thumb-city.png';
 
 class Button extends Component {
 	render() {
@@ -35,15 +34,15 @@ class Button extends Component {
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.right;
 				return (
 					<Entity position={position} events={{click: this.handleRightClick}} visible={isVisible}>
-						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5, depth: .1}}
+						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5 }}
 							position={{x: 0, y: 1.25, z: 0}}
 							rotation={rotation}
-							material={{color: '#200f08', src: `#logo`, side:`double` }}
+							material={{color: '#200f08', side:`double`, shader:`flat` }}
 							text={{value: textvalue, align: `center`, wrapCount: 10 }}
 							sound={{ on: 'click', src: '#click-sound'}}
 							/>
 						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
-							material={{color: '#200f08' }}
+							material={{color: '#200f08', shader:`flat`}}
 							position={{x: 0, y: -1, z: 0}}
 							/>
 					</Entity>
@@ -56,15 +55,15 @@ class Button extends Component {
 				let { isVisible, position, rotation, textvalue } = this.props.signpost.left;
 				return (
 					<Entity position={position} events={{click: this.handleLeftClick}} visible={isVisible}>
-						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5, depth: .1}}
+						<Entity geometry={{primitive: 'plane', width: 1.5, height: .5}}
 							position={{x: 0, y: 1.25, z: 0}}
 							rotation={rotation}
-							material={{color: '#200f08', src: `#logo`, side:`double` }}
+							material={{color: '#200f08', side:`double`, shader:`flat` }}
 							text={{value: textvalue, align: `center`, wrapCount: 10 }}
 							sound={{ on: 'click', src: '#click-sound'}}
 							/>
 						<Entity geometry={{primitive: 'cylinder', radius: 0.1, height: 4}}
-							material={{color: '#200f08' }}
+							material={{color: '#200f08', shader:`flat` }}
 							position={{x: 0, y: -1, z: 0}}
 							/>
 					</Entity>
@@ -75,8 +74,6 @@ class Button extends Component {
 		return(
 			<Entity>
 				<audio id="click-sound" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-				<img id="city-thumb" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg"/>
-				<img id="logo" alt="" crossOrigin="anonymous" src={thumbCity}/>
 				{ this.renderSignPostRight() }
 				{ this.renderSignPostLeft() }
 			</Entity>

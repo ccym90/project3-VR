@@ -1,5 +1,5 @@
 import { createStore, compose, combineReducers } from 'redux';
-import { signpostReducer, locationReducer, showTextReducer } from '../reducers/reducers';
+import { itemReducer, signpostReducer, locationReducer, showTextReducer } from '../reducers/reducers';
 import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase'
 const firebase = require("firebase");
 
@@ -23,15 +23,15 @@ const config = {
 // firebase.auth().signInWithRedirect(provider); //this sign in redirect method most suitble for mobiles
 
 export let initStore = () => {
-  
+
   firebase.initializeApp(firebaseConfig);
 
   const reducer = combineReducers({
     firebase: firebaseStateReducer,
     showText: showTextReducer,
     location: locationReducer,
-    signpost: signpostReducer
-
+    signpost: signpostReducer,
+    playerItems: itemReducer
   });
 
   // const store = createStore( reducer, compose(
