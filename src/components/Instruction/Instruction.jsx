@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 import {Entity} from 'aframe-react';
 import { connect } from 'react-redux';
-import { showText } from '../../redux/actions/actions'
 
 class Instruction extends Component {
 
   render() {
-
-
     let Clue = () => {
       let textChange = this.props.showText;
       let loco = this.props.location;
@@ -58,7 +55,7 @@ class Instruction extends Component {
       }
 
       if(loco === 'castle2') {
-        if(textChange == 'castle2'){
+        if(textChange === 'castle2'){
         }else{
           return(
             <Entity text={{value: ' '}}/>

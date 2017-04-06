@@ -1,4 +1,3 @@
-
 export var setLocation = (location) => {
 	return {
 		type: 'SET_LOCATION',
@@ -13,7 +12,6 @@ export var showText = (instruction) => {
 export var showSignPosts = () => {
 	return { type: 'SHOW_POSTS', visibility: true };
 };
-
 
 export var setSignPostR = (location) => {
 	switch (location) {
@@ -62,8 +60,8 @@ export var setSignPostR = (location) => {
 				textvalue: 'ERROR: OH SHI-',
 				isVisible: true
 			};
-	};
-};
+	}
+}
 
 export var setSignPostL = (location) => {
 	switch (location) {
@@ -112,5 +110,5 @@ export var setSignPostL = (location) => {
 				textvalue: 'ERROR: OH SHI-',
 				isVisible: true
 			};
-	};
+	}
 };
