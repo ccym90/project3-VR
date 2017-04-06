@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {Entity} from 'aframe-react';
 import { connect } from 'react-redux';
-import { showText, showSignPosts } from '../../redux/actions/actions';
+import { getKey, showText, showSignPosts } from '../../redux/actions/actions';
 
 class Graphic extends Component {
-
 
 	handleClick = (e) => {
 		console.log("huston we have a click", this.props.location)
@@ -15,12 +14,18 @@ class Graphic extends Component {
 
 	handleClick2 = (e) => {
 		let {dispatch} = this.props;
-		dispatch(showText('darkwoodsclue'));
+		let { hasKey } = this.props.playerItems
+		if (hasKey){
+			dispatch(showText('finish'))
+		} else {
+			dispatch(showText('darkwoodsclue'));
+		}
 	}
 
-
 	handleClick3 = (e) => {
+	// pick up key
 		let {dispatch} = this.props;
+		dispatch(getKey());
 		dispatch(showText('found'));
 		(console.log("CHANGE", this.props.showText))
 	}

@@ -1,3 +1,7 @@
+export var getKey = () => {
+	return { type: 'GET_KEY', getkey: true }
+};
+
 export var setLocation = (location) => {
 	return {
 		type: 'SET_LOCATION',
@@ -69,8 +73,8 @@ export var setSignPostL = (location) => {
 			return {
 				type: 'SET_SIGN_L_LOCATION',
 				destination: 'field',
-				position: {x: -3, y: 1.5, z: -3},
-				rotation: {x:0, y:45, z:0},
+				position: {x: -7.5, y: 2.4, z: 3},
+				rotation: {x:0, y:120, z:0},
 				textvalue: 'To Fields',
 				isVisible: false
 			};
@@ -78,8 +82,8 @@ export var setSignPostL = (location) => {
 			return {
 				type: 'SET_SIGN_L_LOCATION',
 				destination: 'field',
-				position: {x: -3, y: 1.5, z: -3},
-				rotation: {x:0, y:45, z:0},
+				position: {x: -7.5, y: 2.4, z: 3},
+				rotation: {x:0, y:120, z:0},
 				textvalue: 'To Fields',
 				isVisible: true
 			};

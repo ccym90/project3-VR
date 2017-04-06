@@ -4,8 +4,26 @@ const initialState = {
   location: 'castle',
   signpost: {
     right: { destination: 'darkwoods', position: {x: 3, y: 1.5, z: -3}, rotation: {x:0, y:-45, z:0}, textvalue: 'To Forest', isVisible: false },
-		left: { destination: 'field', position: {x: -3, y: 1.5, z: -3}, rotation: {x:0, y:45, z:0}, textvalue: 'To Fields', isVisible: false },
+		left: { destination: 'field',
+			position: {x: -7.5, y: 2.4, z: 3},
+			rotation: {x:0, y:120, z:0},
+			textvalue: 'To Fields', isVisible: false },
+  },
+  playerItems: {
+    hasKey: false
   }
+};
+
+export var itemReducer = (state = initialState.playerItems, action) => {
+	switch (action.type) {
+		case 'GET_KEY':
+			return {
+				...state,
+				hasKey: action.getkey
+			}
+		default:
+			return state
+	}
 };
 
 export var showTextReducer = (state = initialState.showText, action) => {
