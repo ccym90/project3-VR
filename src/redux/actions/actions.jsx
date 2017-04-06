@@ -26,6 +26,15 @@ export var setSignPostR = (location) => {
 				textvalue: 'To Forest',
 				isVisible: false
 			};
+		case 'castle2':
+			return {
+				type: 'SET_SIGN_R_LOCATION',
+				destination: 'darkwoods',
+				position: {x: 3, y: 1.5, z: -3},
+				rotation: {x:0, y:-45, z:0},
+				textvalue: 'To Forest',
+				isVisible: true
+			};
 		case 'darkwoods':
 			return {
 				type: 'SET_SIGN_R_LOCATION',
@@ -33,16 +42,16 @@ export var setSignPostR = (location) => {
 				position: {x: 2, y: 1.5, z: -5},
 				rotation: {x:0, y:-45, z:0},
 				textvalue: 'To Fields',
-				isVisible: false
+				isVisible: true
 			};
 		case 'field':
 			return {
 				type: 'SET_SIGN_R_LOCATION',
-				destination: 'castle',
+				destination: 'castle2',
 				position: {x: 1, y: 1.5, z: -5},
 				rotation: {x:0, y:-45, z:0},
 				textvalue: 'To Castle',
-				isVisible: false
+				isVisible: true
 			};
 		default:
 			return {
@@ -51,7 +60,7 @@ export var setSignPostR = (location) => {
 				position: {x: 1, y: 1.5, z: -3},
 				rotation: {x:0, y:-45, z:0},
 				textvalue: 'ERROR: OH SHI-',
-				isVisible: false
+				isVisible: true
 			};
 	};
 };
@@ -67,14 +76,23 @@ export var setSignPostL = (location) => {
 				textvalue: 'To Fields',
 				isVisible: false
 			};
+		case 'castle2':
+			return {
+				type: 'SET_SIGN_L_LOCATION',
+				destination: 'field',
+				position: {x: -3, y: 1.5, z: -3},
+				rotation: {x:0, y:45, z:0},
+				textvalue: 'To Fields',
+				isVisible: true
+			};
 		case 'darkwoods':
 			return {
 				type: 'SET_SIGN_L_LOCATION',
-				destination: 'castle',
+				destination: 'castle2',
 				position: {x: -2, y: 1.5, z: -5},
 				rotation: {x:0, y:45, z:0},
 				textvalue: `To Castle`,
-				isVisible: false
+				isVisible: true
 			};
 		case 'field':
 			return {
@@ -83,7 +101,7 @@ export var setSignPostL = (location) => {
 				position: {x: -1, y: 1.5, z: -5},
 				rotation: {x:0, y:45, z:0},
 				textvalue: `To Forest`,
-				isVisible: false
+				isVisible: true
 			};
 		default:
 			return {
@@ -92,7 +110,7 @@ export var setSignPostL = (location) => {
 				position: {x: 1, y: 1.5, z: -3},
 				rotation: {x:0, y:45, z:0},
 				textvalue: 'ERROR: OH SHI-',
-				isVisible: false
+				isVisible: true
 			};
 	};
 };

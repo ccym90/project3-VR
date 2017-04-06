@@ -16,10 +16,11 @@ class Sky extends Component {
 			{ fadeAnimation() }
 			switch (this.props.location) {
 				case 'castle':
+				case 'castle2':
 				return(
 					<Entity>
 						<img id="castle" alt="" src={castle}/>
-						<Entity primitive="a-sky" height="2048" radius="30" src="#castle" theta-length="90" width="2048"
+						<Entity primitive="a-sky" radius="10" src="#castle"
 							sound={{ src: '#music', autoplay: true, loop: true, volume: 1 }} />
 					</Entity>
 				)

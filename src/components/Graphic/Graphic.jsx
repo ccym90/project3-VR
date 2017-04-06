@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Entity} from 'aframe-react';
 import { connect } from 'react-redux';
-import { showText, showSignPosts } from '../../redux/actions/actions'
+import { showText, showSignPosts } from '../../redux/actions/actions';
 
 class Graphic extends Component {
 

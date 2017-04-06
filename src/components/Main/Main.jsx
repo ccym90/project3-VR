@@ -4,6 +4,7 @@ import 'aframe-particle-system-component';
 import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React, { Component } from 'react';
+import Camera from '../Camera'
 import Button from '../Button/Button';
 import Assets from '../Assets/Assets';
 import Sky from '../Sky/Sky';
@@ -24,16 +25,16 @@ class Main extends Component {
 					<img id="groundTexture" alt="" src="https://cdn.aframe.io/a-painter/images/floor.jpg"/>
 					<audio id="music" alt="" crossOrigin="anonymous" src={musicBasement}></audio>
 				</a-assets>
-				<Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
 				<Entity primitive="a-light" type="ambient" color="#445451"/>
 				<Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
+				<Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
 
 				<Instruction/>
 				<Sky/>
 				<Button />
 				<Graphic/>
 
-				<Entity primitive="a-camera">
+				<Camera>
           <a-entity cursor="fuse: true; fuseTimeout: 500"
                     position="0 0 -1"
                     geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
@@ -51,7 +52,7 @@ class Main extends Component {
                         fill="forwards"
                         from="1 1 1" to="0.1 0.1 0.1"></a-animation>
           </a-entity>
-				</Entity>
+				</Camera>
 			</Scene>
 		);
 	}
@@ -59,6 +60,8 @@ class Main extends Component {
 
 export default Main;
 // <Entity particle-system={{preset: 'snow', particleCount: 2000}}/>
+// <Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
+
 /*
 1.
 obj: gravestone
