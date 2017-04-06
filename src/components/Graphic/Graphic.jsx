@@ -30,10 +30,13 @@ class Graphic extends Component {
     if(this.props.location === 'castle') {
       return(
         <Entity
-          geometry={{primitive: 'box'}}
+          geometry={{primitive: 'box', width: 1, height: 1.5, depth: 1}}
           material={{color: 'red'}}
-          position={{x: 0, y: 1, z: -3}}
-          events={{click: this.handleClick}}/>
+          position={{x: -4.14, y: 1, z: -2.81}}
+          rotation={{x:1.72, y:-36.1, z:4.01}}
+          material={{src: '#tomb'}}
+          events={{click: this.handleClick}}
+          </Entity>
       )
     } else if (this.props.location === 'darkwoods') {
       return(
