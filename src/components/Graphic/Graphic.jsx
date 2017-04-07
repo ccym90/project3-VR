@@ -33,6 +33,7 @@ class Graphic extends Component {
         material={{src: '#key', opacity: 0.54, roughness: 0, metalness: 0.44 }}
         events={{click: this.handleClick3}}>
         <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"/>
+				<a-animation attribute="scale" begin="mouseleave" visbile="false"/>
         </Entity>
       )
     } else if(this.props.location === 'castle') {

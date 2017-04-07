@@ -60,10 +60,10 @@ class Instruction extends Component {
         } else if(textChange === 'finish') {
           return (
             <Entity text={{value: 'You managed to escape... this time...', align: 'center', wrapCount: 15}}
-            position={{x: 0, y: 1.90, z: -4}}
+            position={{x: 0, y: 1.90, z: -10}}
             rotation={{x:0, y: 14.90, z:0}}
             scale={{x:1.9, y:1.65, z:9.73}}>
-              <a-animation attribute="position" fill="forwards" to="0 1.9 -1.21" from="0 1.9 -4" easing="ease" dur="10000"/>
+              <a-animation attribute="position" fill="forwards" to="0 1.9 -1.21" from="0 1.9 -10" easing="ease" dur="8000"/>
             </Entity>
           )
         } else {
