@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
-import darkwoods from './images/darkwoods.jpg';
-import field from './images/darkwoodsgirl.jpg';
-import castle from './images/castle.jpg';
-
 
 class Sky extends Component {
 	render() {
@@ -29,7 +25,7 @@ class Sky extends Component {
 								primitive='a-sky'
 								position={{ x: 0, y: 5, z: 0 }}
 								geometry={{ radius: 10, thetaLength: 150, thetaStart: 10}}
-								src={castle}
+								src={'#castle'}
 								sound={{ src: '#music', autoplay: true, loop: true, volume: 1 }} />
 							<Entity primitive="a-circle" src="#groundTexture"
 								position={{ x: 0, y: -5, z: 0 }}
@@ -52,7 +48,7 @@ class Sky extends Component {
 								primitive='a-sky'
 								position={{ x: 0, y: 5, z: 0 }}
 								geometry={{ radius: 10, thetaLength: 160, thetaStart: 0}}
-								src={darkwoods}
+								src={'#darkwoods'}
 								sound={{ src: '#music', autoplay: true, loop: true, volume: 1 }} />
 							<Entity primitive="a-circle" src="#groundTexture"
 								position={{ x: 0, y: -4.5, z: 0 }}
@@ -75,7 +71,7 @@ class Sky extends Component {
 								primitive='a-sky'
 								position={{ x: 0, y: 6.5, z: 0 }}
 								geometry={{ radius: 10, thetaLength: 100, thetaStart: 40}}
-								src={field}
+								src={'#field'}
 								sound={{ src: '#music', autoplay: true, loop: true, volume: 1 }} />
 							<Entity primitive="a-circle" src="#groundTexture"
 								position={{ x: 0, y: -1, z: 0 }}
