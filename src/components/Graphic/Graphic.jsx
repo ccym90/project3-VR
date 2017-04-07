@@ -47,7 +47,9 @@ class Graphic extends Component {
         rotation={{x: 76.78, y: 21.20, z: -1.15}}
         scale={{x: 1.29, y: 1.89, z: 1.76}}
         material={{src: '#car', opacity: 0.68,roughness: 0.86, metalness: 1 }}
-        events={{click: this.handleClick2}}/>
+        events={{click: this.handleClick2}}
+				sound={{src: '#sfx-locked', on: 'click'}}
+				/>
       )
     } else if (this.props.location === 'field') {
       return(

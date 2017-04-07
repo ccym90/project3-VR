@@ -4,26 +4,34 @@ import { Entity } from 'aframe-react'
 import tomb from '../Graphic/grave.png'
 import key from '../Graphic/key.png'
 import car from '../Graphic/car.png'
+
 // Sky:
 import darkwoods from '../Sky/images/darkwoods.jpg';
 import field from '../Sky/images/darkwoodsgirl.jpg';
 import castle from '../Sky/images/castle.jpg';
 // Music:
 import musicBasement from './basement-storage.mp3'
+// SFX:
+import sfxIgnition from '../Graphic/car-ignition.wav';
+import sfxLocked from '../Graphic/doorlocked.wav';
+
+
 
 export default class Assets extends Component {
 	render () {
 		return (
 			<a-assets>
 				<audio id="click-sound" alt="" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-				<audio id="music" alt="" crossOrigin="anonymous" src={musicBasement}></audio>
-				<img id="darkwoods" alt="" src={darkwoods}/>
-				<img id="field" alt="" src={field}/>
-				<img id="castle" alt="" src={castle}/>
+				<audio id="music" alt="" crossOrigin="anonymous" src={musicBasement} preload></audio>
+				<img id="darkwoods" alt="" src={darkwoods} preload/>
+				<img id="field" alt="" src={field} preload/>
+				<img id="castle" alt="" src={castle} preload/>
+				<audio id="sfx-ignition" alt="" src={sfxIgnition} preload></audio>
+				<audio id="sfx-locked" alt="" src={sfxLocked} preload></audio>
 				<img id="groundTexture" alt="" src="https://cdn.aframe.io/a-painter/images/floor.jpg"/>
-				<img id="tomb" alt="" src={tomb}/>
-				<img id="key" alt="" src={key}/>
-				<img id="car" alt="" src={car}/>
+				<img id="tomb" alt="" src={tomb} preload/>
+				<img id="key" alt="" src={key} preload/>
+				<img id="car" alt="" src={car} preload/>
 			</a-assets>
 		)
 	}
