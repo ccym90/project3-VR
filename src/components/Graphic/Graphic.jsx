@@ -25,7 +25,8 @@ class Graphic extends Component {
 			let {dispatch} = this.props;
 			dispatch(getKey());
 			dispatch(showText('found'));
-			e.target.setAttribute('visible', false);
+      // e.target.setAttribute('visible', false);
+
 	}
 
   renderNewGraphic = () => {
@@ -47,7 +48,9 @@ class Graphic extends Component {
         rotation={{x: 76.78, y: 21.20, z: -1.15}}
         scale={{x: 1.29, y: 1.89, z: 1.76}}
         material={{src: '#car', opacity: 0.68,roughness: 0.86, metalness: 1 }}
-        events={{click: this.handleClick2}}/>
+        events={{click: this.handleClick2}}>
+          <a-animation attribute="position" to="-5 0.66 -7.98" from="-2.78 0.66 -7.98" easing="ease" dur="900"/>
+        </Entity>
       )
     } else if (this.props.location === 'field') {
       return(
@@ -57,7 +60,8 @@ class Graphic extends Component {
         rotation={{x:75.06, y:150.6, z:93.97}}
         material={{src: '#key', opacity: 0.54, roughness: 0, metalness: 0.44 }}
         events={{click: this.handleClick3}}>
-          <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
+          <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"/>
+          <a-animation attibute="scale" begin="mouseleave" visbile="false"/>
         </Entity>
       )
     }

@@ -15,7 +15,11 @@ class Instruction extends Component {
             <Entity text={{value: 'You found a key!', align: 'center', wrapCount: 15}}
             position={{x: -1.62, y: 2.43, z: -1.27}}
             rotation={{x:0, y:57.87, z:0}}
-            scale={{x:1.25, y:1.16, z:8.29}}/>
+            scale={{x:1.25, y:1.16, z:8.29}}>
+              <a-animation attribute="position" repeat="indefinite" easing="ease" dur="900" />
+              <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
+              to="-1.62 2.8 -1.27"/>
+            </Entity>
           )
         } else {
           return(
@@ -31,6 +35,7 @@ class Instruction extends Component {
           return (
             <Entity text={{value: 'Is that blood on that tombstone...?', align: 'center', wrapCount: 15 }}
             position={{x: 0, y: 2, z: -1.2}}>
+              <a-animation attribute="position" fill="forwards" to="0 2 -1.2" from="0 2 -3" easing="ease" dur="10000"/>
             </Entity>
           )
         } else if(textChange === 'hk_instruction') {
@@ -38,7 +43,8 @@ class Instruction extends Component {
             <Entity text={{value: 'He rises at nightfall, you need to leave now!', align: 'center', wrapCount: 15}}
             position={{x: -2.46, y: 2.62, z: -2.12}}
             rotation={{x: 0, y:55.58, z:0}}
-            scale={{x:1.54, y:1.53, z:3.75}}/>
+            scale={{x:1.54, y:1.53, z:3.75}}>
+              <a-animation attribute="position" fill="forwards" from="-2.46 2.62 -3" to="-2.46 2.62 -1"  easing="ease" dur="900"/>            </Entity>
           )
         }
       }
