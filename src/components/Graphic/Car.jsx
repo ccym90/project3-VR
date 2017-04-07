@@ -28,7 +28,8 @@ class Car extends Component {
 					material={{src: '#car', opacity: 0.68,roughness: 0.86, metalness: 1 }}
 					events={{click: this.handleClick2}}
 					sound={{src: '#sfx-ignition', on: 'click'}}>
-				</Entity>
+	          <a-animation attribute="scale" begin="mouseenter"/>
+	        </Entity>
 			)
 		} else {
 			return(

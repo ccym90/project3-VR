@@ -16,9 +16,9 @@ class Instruction extends Component {
             position={{x: -1.62, y: 2.43, z: -1.27}}
             rotation={{x:0, y:57.87, z:0}}
             scale={{x:1.25, y:1.16, z:8.29}}>
-              <a-animation attribute="position" repeat="indefinite" easing="ease" dur="900" />
-              <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
-              to="-1.62 2.8 -1.27"/>
+              <a-animation attribute="position" repeat="indefinite" easing="ease" dur="10000" />
+              <a-animation attribute="position" direction="alternate" dur="8000" repeat="indefinite"
+              to="-1.26 2.48 -1.27"/>
             </Entity>
           )
         } else {
@@ -60,9 +60,11 @@ class Instruction extends Component {
         } else if(textChange === 'finish') {
           return (
             <Entity text={{value: 'You managed to escape... this time...', align: 'center', wrapCount: 15}}
-            position={{x: 0, y: 3.23, z: -1.21}}
+            position={{x: 0, y: 1.90, z: -4}}
             rotation={{x:0, y: 14.90, z:0}}
-            scale={{x:1.9, y:1.65, z:9.73}}/>
+            scale={{x:1.9, y:1.65, z:9.73}}>
+              <a-animation attribute="position" fill="forwards" to="0 1.9 -1.21" from="0 1.9 -4" easing="ease" dur="10000"/>
+            </Entity>
           )
         } else {
           return(

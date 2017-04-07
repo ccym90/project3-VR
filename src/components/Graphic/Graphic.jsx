@@ -32,12 +32,15 @@ class Graphic extends Component {
         rotation={{x:75.06, y:150.6, z:93.97}}
         material={{src: '#key', opacity: 0.54, roughness: 0, metalness: 0.44 }}
         events={{click: this.handleClick3}}>
-          <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"/>
-          <a-animation attibute="scale" begin="mouseleave" visbile="false"/>
+        <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"/>
         </Entity>
       )
+    } else if(this.props.location === 'castle') {
+        return(
+          <Tomb/>
+        )
+      }
     }
-  }
 	render() {
 		return (
 			<Entity>
