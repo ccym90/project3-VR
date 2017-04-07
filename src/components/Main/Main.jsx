@@ -28,23 +28,23 @@ class Main extends Component {
 				<Entity primitive="a-light" type="ambient" color="#445451"/>
 				<Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
 				<Camera>
-					<a-entity cursor="fuse: true; fuseTimeout: 500"
-										position="0 0 -1"
-										geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-										material="color: white; shader: flat">
-						<a-animation begin="click"
-												easing="ease-in"
-												attribute="scale"
-												dur="150"
-												fill="backwards"
-												from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-						<a-animation begin="cursor-fusing"
-												easing="ease-in"
-												attribute="scale"
-												dur="1500"
-												fill="forwards"
-												from="1 1 1" to="0.1 0.1 0.1"></a-animation>
-					</a-entity>
+          <a-entity cursor="fuse: true; fuseTimeout: 800"
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                    material="color: white; shader: flat">
+            <a-animation begin="click"
+                        easing="ease-in"
+                        attribute="scale"
+                        dur="200"
+                        fill="backwards"
+                        from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+            <a-animation begin="cursor-fusing"
+                        easing="ease-in"
+                        attribute="scale"
+                        dur="1500"
+                        fill="forwards"
+                        from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+          </a-entity>
 				</Camera>
 			</Scene>
 		);
