@@ -32,14 +32,14 @@ class Main extends Component {
 				<Graphic/>
 
 				<Camera>
-          <a-entity cursor="fuse: true; fuseTimeout: 500"
+          <a-entity cursor="fuse: true; fuseTimeout: 800"
                     position="0 0 -1"
                     geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                     material="color: white; shader: flat">
             <a-animation begin="click"
                         easing="ease-in"
                         attribute="scale"
-                        dur="150"
+                        dur="200"
                         fill="backwards"
                         from="0.1 0.1 0.1" to="1 1 1"></a-animation>
             <a-animation begin="cursor-fusing"

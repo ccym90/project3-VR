@@ -3,7 +3,7 @@ import {Entity} from 'aframe-react';
 import { connect } from 'react-redux';
 import { getKey, showText, showSignPosts } from '../../redux/actions/actions';
 import tomb from './grave.png';
-import key from './key.png';
+import key from './car-key.png';
 import car from './car.png'
 
 
@@ -54,10 +54,10 @@ handleClick3 = (e) => {
     } else if (this.props.location === 'field') {
       return(
         <Entity
-        geometry={{primitive: 'box', width:1, height:0.53, depth:0.71}}
-        position={{x: -5.07, y:0.43 , z:-4.47}}
-        rotation={{x:76.78, y:41.25, z:86.52}}
-        material={{src: key, opacity: 0.54, roughness: 0.5 }}
+        geometry={{primitive: 'box', width:0.76, height:0.69, depth:0.73}}
+        position={{x: -5.40, y:0.07 , z:-4.47}}
+        rotation={{x:75.06, y:150.6, z:93.97}}
+        material={{src: key, opacity: 0.54, roughness: 0, metalness: 0.44 }}
         events={{click: this.handleClick3}}/>
       )
     }

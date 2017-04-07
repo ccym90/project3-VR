@@ -13,7 +13,9 @@ class Instruction extends Component {
         if(textChange === 'found'){
           return(
             <Entity text={{value: 'You found a key!', align: 'center', wrapCount: 15}}
-            position={{x: 0, y: 2, z: -1.2}}/>
+            position={{x: -1.62, y: 2.43, z: -1.27}}
+            rotation={{x:0, y:57.87, z:0}}
+            scale={{x:1.25, y:1.16, z:8.29}}/>
           )
         } else {
           return(
@@ -31,7 +33,9 @@ class Instruction extends Component {
         } else if(textChange === 'hk_instruction') {
           return(
             <Entity text={{value: 'He rises at nightfall, you need to leave now!', align: 'center', wrapCount: 15}}
-            position={{x: 0, y: 2, z: -1.2}}/>
+            position={{x: -0.84, y: 1.92, z: -0.66}}
+            rotation={{x: 0, y:48.70, z:0}}
+            scale={{x:1.05, y:1, z:1.75}}/>
           )
         }
       }
