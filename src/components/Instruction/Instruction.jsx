@@ -24,18 +24,21 @@ class Instruction extends Component {
         }
       };
 
+      // <Animation animation={{attribute:"rotation", dur:"5000", repeat:"indefinite", to:"0 360 360"}}/>
+      // <a-animation animation={{attribute:"rotation", begin:"click", dur:"2000", to:"360 405 45"}}/>
       if(loco === 'castle') {
         if (textChange === 'hk_intro') {
           return (
             <Entity text={{value: 'Is that blood on that tombstone...?', align: 'center', wrapCount: 15 }}
-            position={{x: 0, y: 2, z: -1.2}}/>
+            position={{x: 0, y: 2, z: -1.2}}>
+            </Entity>
           )
         } else if(textChange === 'hk_instruction') {
           return(
             <Entity text={{value: 'He rises at nightfall, you need to leave now!', align: 'center', wrapCount: 15}}
-            position={{x: -0.84, y: 1.92, z: -0.66}}
-            rotation={{x: 0, y:48.70, z:0}}
-            scale={{x:1.05, y:1, z:1.75}}/>
+            position={{x: -2.46, y: 2.62, z: -2.12}}
+            rotation={{x: 0, y:55.58, z:0}}
+            scale={{x:1.54, y:1.53, z:3.75}}/>
           )
         }
       }
@@ -44,12 +47,16 @@ class Instruction extends Component {
         if(textChange === 'darkwoodsclue') {
           return (
             <Entity text={{value: 'It\'s locked, you\'ll need a key', align: 'center', wrapCount: 15}}
-            position={{x: 0, y: 2, z: -1.2}}/>
+            position={{x: -0.95, y: 3.92, z: -3.16}}
+            rotation={{x:0, y:18.33, z:0}}
+            scale={{x:1.81, y:1.88, z:0.35}}/>
           )
         } else if(textChange === 'finish') {
           return (
             <Entity text={{value: 'You managed to escape... this time...', align: 'center', wrapCount: 15}}
-            position={{x: 0, y: 2, z: -1.2}}/>
+            position={{x: 0, y: 3.23, z: -1.21}}
+            rotation={{x:0, y: 14.90, z:0}}
+            scale={{x:1.9, y:1.65, z:9.73}}/>
           )
         } else {
           return(

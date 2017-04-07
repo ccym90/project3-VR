@@ -48,7 +48,7 @@ class Graphic extends Component {
         geometry={{primitive: 'box', width:5.65, height:4.10, depth:2.13}}
         position={{x: -2.78, y: 0.66, z: -7.98 }}
         rotation={{x: 76.78, y: 21.20, z: -1.15}}
-        scale={{x: 1.48, y: 2.06, z: 1.98}}
+        scale={{x: 1.29, y: 1.89, z: 1.76}}
         material={{src: car, opacity: 0.68,roughness: 0.86, metalness: 1 }}
         events={{click: this.handleClick2}}/>
       )
@@ -59,7 +59,9 @@ class Graphic extends Component {
         position={{x: -5.40, y:0.07 , z:-4.47}}
         rotation={{x:75.06, y:150.6, z:93.97}}
         material={{src: key, opacity: 0.54, roughness: 0, metalness: 0.44 }}
-        events={{click: this.handleClick3}}/>
+        events={{click: this.handleClick3}}>
+          <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
+        </Entity>
       )
     }
   }
