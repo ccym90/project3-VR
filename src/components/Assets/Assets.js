@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Entity } from 'aframe-react'
 // Graphics:
 import tomb from '../Graphic/grave.png'
-import key from '../Graphic/key.png'
+import key from '../Graphic/car-key.png'
 import car from '../Graphic/car.png'
 
 // Sky:
