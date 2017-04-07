@@ -23,12 +23,13 @@ class Graphic extends Component {
     } else {
         dispatch(showText('darkwoodsclue'));
     }
-}
-handleClick3 = (e) => {
-    let {dispatch} = this.props;
-    dispatch(getKey());
-    dispatch(showText('found'));
-}
+	}
+
+	handleClick3 = (e) => {
+	    let {dispatch} = this.props;
+	    dispatch(getKey());
+	    dispatch(showText('found'));
+	}
 
   renderNewGraphic = () => {
     let {dispatch} = this.props;
@@ -62,8 +63,6 @@ handleClick3 = (e) => {
       )
     }
   }
-
-
 
   render() {
     return (
