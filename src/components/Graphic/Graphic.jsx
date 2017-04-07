@@ -29,18 +29,10 @@ class Graphic extends Component {
 
 	}
 
+
   renderNewGraphic = () => {
     let {dispatch} = this.props;
-    if(this.props.location === 'castle') {
-      return(
-        <Entity
-          geometry={{primitive: 'box', width: 1, height: 1.5, depth: 1}}
-          position={{x: -4.43, y: 1.5, z: -3.74}}
-          rotation={{x:1.72, y:-44.6, z:4.06}}
-          material={{src: '#tomb', roughness:0.70, metalness:0.82 }}
-          events={{click: this.handleClick}}/>
-      )
-    } else if (this.props.location === 'darkwoods') {
+    if (this.props.location === 'darkwoods') {
       return(
         <Entity
         geometry={{primitive: 'box', width:5.65, height:4.10, depth:2.13}}
@@ -49,7 +41,7 @@ class Graphic extends Component {
         scale={{x: 1.29, y: 1.89, z: 1.76}}
         material={{src: '#car', opacity: 0.68,roughness: 0.86, metalness: 1 }}
         events={{click: this.handleClick2}}>
-          <a-animation attribute="position" to="-5 0.66 -7.98" from="-2.78 0.66 -7.98" easing="ease" dur="900"/>
+          <a-animation attribute="scale" begin="mouseenter"/>
         </Entity>
       )
     } else if (this.props.location === 'field') {
@@ -60,12 +52,20 @@ class Graphic extends Component {
         rotation={{x:75.06, y:150.6, z:93.97}}
         material={{src: '#key', opacity: 0.54, roughness: 0, metalness: 0.44 }}
         events={{click: this.handleClick3}}>
-          <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"/>
-          <a-animation attibute="scale" begin="mouseleave" visbile="false"/>
+        <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"/>
         </Entity>
       )
+    } else if(this.props.location === 'castle') {
+        return(
+          <Entity
+            geometry={{primitive: 'box', width: 1, height: 1.5, depth: 1}}
+            position={{x: -4.43, y: 1.5, z: -3.74}}
+            rotation={{x:1.72, y:-44.6, z:4.06}}
+            material={{src: '#tomb', roughness:0.70, metalness:0.82 }}
+            events={{click: this.handleClick}}/>
+        )
+      }
     }
-  }
 	render() {
 		return (
 			<Entity>
