@@ -25,7 +25,7 @@ class Instruction extends Component {
       if(loco === 'castle') {
         if (textChange === 'hk_intro') {
           return (
-            <Entity text={{value: 'Is that blood on the tombstone...?', align: 'center', wrapCount: 15 }}
+            <Entity text={{value: 'Is that blood on that tombstone...?', align: 'center', wrapCount: 15 }}
             position={{x: 0, y: 2, z: -1.2}}/>
           )
         } else if(textChange === 'hk_instruction') {

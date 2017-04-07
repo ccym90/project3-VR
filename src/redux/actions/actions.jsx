@@ -41,8 +41,8 @@ export var setSignPostR = (location) => {
 			return {
 				type: 'SET_SIGN_R_LOCATION',
 				destination: 'field',
-				position: {x: -5.76, y: 2.18, z: -6.86},
-				rotation: {x:0, y:69.9, z:0},
+				position: {x: 7.89, y: 2.18, z: 1.59},
+				rotation: {x:0, y:-64.1, z:0},
 				textvalue: 'To Fields',
 				isVisible: true
 			};
